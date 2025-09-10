@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaElectroplating.ViewModels"
+        xmlns:views="using:AvaloniaElectroplating.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaElectroplating.Views.MainView"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvaloniaElectroplating">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainViewModel/>
+    </Design.DataContext>
+
+    <SplitView DisplayMode="CompactInline" CompactPaneLength="100">
+        <SplitView.Pane>
+            <StackPanel HorizontalAlignment="Center" Spacing="10" >
+                <Button Content="Calculate" Width="80" Command="{Binding GoToCalculateCommand}"></Button>
+                <Button Content="Saved" Width="80"></Button>
+                <Button Content="Notes" Width="80" Command="{Binding GoToNotesCommand}"></Button>
+                <Button Content="Settings" Width="80"></Button>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <ContentControl Content="{Binding CurrentPage}"></ContentControl>
+        </SplitView.Content>
+    </SplitView>
+    
+</Window>

@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaElectroplating.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaElectroplating.Views.CalculatePageView"
+             x:DataType="vm:CalculatePageViewModel">
+    <Grid RowDefinitions="Auto, *, Auto" ShowGridLines="True">
+        
+        <!-- Options -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="25" HorizontalAlignment="Center">
+            <!-- Type -->
+            <StackPanel Spacing="10">
+                <TextBlock Text="Type"></TextBlock>
+                <ComboBox SelectedItem="{Binding SelectedFastenerType}" Width="100"
+                          ItemsSource="{Binding FastenerTypes}"
+                          SelectedIndex="0">
+                </ComboBox>
+            </StackPanel>
+            <!-- Metric size -->
+            <StackPanel Spacing="10">
+                <TextBlock Text="Metric size"></TextBlock>
+                <ComboBox Width="100" ItemsSource="{Binding AvailableSizes}"
+                          SelectedItem="{Binding SelectedFastenerSize}"
+                          SelectedIndex="0">
+                </ComboBox>
+            </StackPanel>
+            <!-- Thread length -->
+            <StackPanel Spacing="10">
+                <TextBlock Text="Thread length (mm)"></TextBlock>
+                <NumericUpDown Watermark="mm" FormatString="0" Width="125" Value="{Binding Value}"></NumericUpDown>
+            </StackPanel>
+            
+            <Button Command="{Binding AddFastenerToListCommand}">+</Button>
+        </StackPanel>
+
+        <!-- List -->
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <ListBox ItemsSource="{Binding FastenersToCalc}" Margin="100">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding DisplayName}"></TextBlock>
+                            <Button>X</Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        
+            <!-- Calculate button and result -->
+        <StackPanel Grid.Row="2" Background="Aqua">
+            <TextBlock Text="{Binding Total}"></TextBlock>
+            <Button Command="{Binding CalculateAllCommand}">Calculate</Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

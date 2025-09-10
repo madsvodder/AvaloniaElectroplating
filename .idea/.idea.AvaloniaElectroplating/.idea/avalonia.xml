@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="AvaloniaElectroplating/App.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+        <entry key="AvaloniaElectroplating/ViewModels/NewCalculatePageViewModel.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+        <entry key="AvaloniaElectroplating/Views/CalculatePageView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+        <entry key="AvaloniaElectroplating/Views/MainView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+        <entry key="AvaloniaElectroplating/Views/MainWindow.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+        <entry key="AvaloniaElectroplating/Views/NotesPageView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+        <entry key="AvaloniaElectroplating/Views/NotesView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
