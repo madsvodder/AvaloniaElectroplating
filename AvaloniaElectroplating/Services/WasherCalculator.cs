@@ -34,6 +34,9 @@ public class WasherCalculator
 
         double totalSurfaceArea = faceArea + outerEdge + innerEdge;
 
+        // Set surface area in the washer
+        washer.SurfaceArea = totalSurfaceArea;
+
         return totalSurfaceArea;
     }
 }

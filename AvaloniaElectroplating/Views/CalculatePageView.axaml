@@ -3,13 +3,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:AvaloniaElectroplating.ViewModels"
+             x:Name="Root"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaElectroplating.Views.CalculatePageView"
              x:DataType="vm:CalculatePageViewModel">
-    <Grid RowDefinitions="Auto, *, Auto" ShowGridLines="True">
+    <Grid RowDefinitions="Auto, *, Auto">
         
         <!-- Options -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="25" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="25" HorizontalAlignment="Center" Margin="0, 20, 0, 0">
             <!-- Type -->
             <StackPanel Spacing="10">
                 <TextBlock Text="Type"></TextBlock>
@@ -26,33 +27,41 @@
                           SelectedIndex="0">
                 </ComboBox>
             </StackPanel>
+            
             <!-- Thread length -->
             <StackPanel Spacing="10">
                 <TextBlock Text="Thread length (mm)"></TextBlock>
-                <NumericUpDown Watermark="mm" FormatString="0" Width="125" Value="{Binding Value}"></NumericUpDown>
+                <NumericUpDown Watermark="mm" Minimum="0" FormatString="0" Width="125" Value="{Binding Value}"></NumericUpDown>
             </StackPanel>
             
-            <Button Command="{Binding AddFastenerToListCommand}">+</Button>
+            <!-- Plus button -->
+            <Button Command="{Binding AddFastenerToListCommand}" VerticalAlignment="Bottom">Add</Button>
         </StackPanel>
 
         <!-- List -->
-        <StackPanel Grid.Row="1" Orientation="Vertical">
-            <ListBox ItemsSource="{Binding FastenersToCalc}" Margin="100">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding DisplayName}"></TextBlock>
-                            <Button>X</Button>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </StackPanel>
+        <Grid Grid.Row="1" RowDefinitions="7*, 3*">
+            <ScrollViewer IsScrollChainingEnabled="true" Margin="30">
+                <ListBox ItemsSource="{Binding FastenersToCalc}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
+                                <Button Command="{Binding #Root.((vm:CalculatePageViewModel)DataContext).RemoveFastenerCommand}"
+                                        CommandParameter="{Binding .}"
+                                        Grid.Column="1">
+                                    Delete
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </ScrollViewer>
+            <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="32" Text="{Binding Total}">Result!</TextBlock>
+        </Grid>
         
             <!-- Calculate button and result -->
-        <StackPanel Grid.Row="2" Background="Aqua">
-            <TextBlock Text="{Binding Total}"></TextBlock>
-            <Button Command="{Binding CalculateAllCommand}">Calculate</Button>
+        <StackPanel Grid.Row="2">
         </StackPanel>
 
     </Grid>

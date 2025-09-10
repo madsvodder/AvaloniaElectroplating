@@ -18,7 +18,7 @@ public partial class CalculatePageViewModel : PageViewModel
     [ObservableProperty] private string _value;
     [ObservableProperty] private string _total;
     
-    public ObservableCollection<FastenerSize> AvailableSizes { get; } = new();
+    public ObservableCollection<FastenerSize> AvailableSizes { get; } = new(); 
     public ObservableCollection<Fastener> FastenersToCalc { get; } = new();
     
     public CalculatePageViewModel()
@@ -44,6 +44,9 @@ public partial class CalculatePageViewModel : PageViewModel
                 FastenersToCalc.Add(CreateWasher());
                 break;
         }
+        
+        // Finally calculate everything
+        CalculateAll();
     }
 
     private Bolt CreateBolt()
@@ -93,9 +96,11 @@ public partial class CalculatePageViewModel : PageViewModel
                 foreach (var size in FastenersDatabase.WashersDictionary.Keys)
                     AvailableSizes.Add(size);
                 break;
+            
             case FastenerType.Nut:
                 Console.WriteLine("To Do...");
                 break;
+            
             default:
                 Console.WriteLine("None selected...");
                 break;
@@ -103,20 +108,17 @@ public partial class CalculatePageViewModel : PageViewModel
         
         SelectedFastenerSize = AvailableSizes.FirstOrDefault();
     }
-
-    [RelayCommand]
+    
     private void CalculateAll()
     {
         BoltCalculator bc = new();
         WasherCalculator wc = new();
-
         
-
+        // Reset total string
+        Total = "";
+        
         if (FastenersToCalc.Count > 0)
         {
-            // Reset total string
-            Total = "0.0";
-        
             // Count
             double count = 0;
             
@@ -142,6 +144,14 @@ public partial class CalculatePageViewModel : PageViewModel
         else
         {
             Console.WriteLine("No fasteners to calculate!");
+            
         }
+    }
+
+    [RelayCommand]
+    private void RemoveFastener(Fastener fastener)
+    {
+        FastenersToCalc.Remove(fastener);
+        CalculateAll();
     }
 }
