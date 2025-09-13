@@ -36,6 +36,4 @@ public partial class MainViewModel : ViewModelBase
     [RelayCommand]
     private void GoToNotes() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageNames.Notes);
     
-        
-    
 }

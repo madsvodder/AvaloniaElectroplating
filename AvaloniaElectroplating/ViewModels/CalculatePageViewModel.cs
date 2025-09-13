@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using AvaloniaElectroplating.Enums;
+using AvaloniaElectroplating.Factories;
 using AvaloniaElectroplating.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -11,13 +12,17 @@ namespace AvaloniaElectroplating.ViewModels;
 
 public partial class CalculatePageViewModel : PageViewModel
 {
+    // Calculator classes - Change to dependency injection?
+    FastenerFactory fc = new();
+    BoltCalculator bc = new();
+    WasherCalculator wc = new();
+    NutCalculator nc = new();
     
     [ObservableProperty] private List<FastenerType> _fastenerTypes;
     [ObservableProperty] private FastenerType _selectedFastenerType;
-    [ObservableProperty] private FastenerSize _selectedFastenerSize;
-    [ObservableProperty] private string _value;
-    [ObservableProperty] private string _total;
-    
+    [ObservableProperty] private FastenerSize? _selectedFastenerSize;
+    [ObservableProperty] private double? _value;
+    [ObservableProperty] private string _totalString = "";
     public ObservableCollection<FastenerSize> AvailableSizes { get; } = new(); 
     public ObservableCollection<Fastener> FastenersToCalc { get; } = new();
     
@@ -35,49 +40,35 @@ public partial class CalculatePageViewModel : PageViewModel
     [RelayCommand]
     private void AddFastenerToList()
     {
+        if (!SelectedFastenerSize.HasValue)
+        {
+            Console.WriteLine("No size selected!");
+            return;
+        }
+
         switch (SelectedFastenerType)
         {
             case FastenerType.Bolt:
-                FastenersToCalc.Add(CreateBolt());
+                if (!Value.HasValue)
+                {
+                    Console.WriteLine("Bolt requires a value!");
+                    return;
+                }
+                FastenersToCalc.Add(fc.CreateFastener(Value.Value, SelectedFastenerSize.Value, SelectedFastenerType));
                 break;
+            
+            case FastenerType.Nut:
             case FastenerType.Washer:
-                FastenersToCalc.Add(CreateWasher());
+                FastenersToCalc.Add(fc.CreateFastener(null, SelectedFastenerSize.Value, SelectedFastenerType));
+                break;
+            
+            default:
+                Console.WriteLine("Default");
                 break;
         }
-        
+
         // Finally calculate everything
         CalculateAll();
-    }
-
-    private Bolt CreateBolt()
-    {
-        try
-        {
-            var doubleValue = double.Parse(Value);
-            var b = new Bolt(SelectedFastenerSize, doubleValue);
-            b.DisplayName = string.Format("{0} {1} {2}{3}", b.Type, b.Size, b.ThreadLength, "mm");
-            return b;
-        }
-        catch
-        {
-            Console.WriteLine("Failed to create new bolt!!!");
-            return null;
-        }
-    }
-    
-    private Washer CreateWasher()
-    {
-        try
-        {
-            var b = new Washer(SelectedFastenerSize);
-            b.DisplayName = string.Format("{0} {1}", b.Type, b.Size);
-            return b;
-        }
-        catch
-        {
-            Console.WriteLine("Failed to create new washer!!!");
-            return null;
-        }
     }
 
     // When the first combo box selection is changed.
@@ -98,24 +89,24 @@ public partial class CalculatePageViewModel : PageViewModel
                 break;
             
             case FastenerType.Nut:
-                Console.WriteLine("To Do...");
+                foreach (var size in FastenersDatabase.NutsDictionary.Keys)
+                    AvailableSizes.Add(size);
                 break;
             
             default:
+                AvailableSizes.Add(FastenerSize.Undefined);
                 Console.WriteLine("None selected...");
                 break;
         }
         
         SelectedFastenerSize = AvailableSizes.FirstOrDefault();
+        Console.WriteLine(SelectedFastenerSize);
     }
     
     private void CalculateAll()
     {
-        BoltCalculator bc = new();
-        WasherCalculator wc = new();
-        
         // Reset total string
-        Total = "";
+        TotalString = "";
         
         if (FastenersToCalc.Count > 0)
         {
@@ -132,6 +123,9 @@ public partial class CalculatePageViewModel : PageViewModel
                     case FastenerType.Washer:
                         wc.CalculateSurfaceArea((Washer)fa);
                         break;
+                    case FastenerType.Nut:
+                        nc.CalculateSurfaceArea((Nut)fa);
+                        break;
                 }
 
                 count += fa.SurfaceArea;
@@ -139,12 +133,11 @@ public partial class CalculatePageViewModel : PageViewModel
 
             CurrentCalculator cc = new();
 
-            Total = $"You need: {cc.CalculateCurrent(count)}mA";
+            TotalString = $"You need: {cc.CalculateCurrent(count)}A";
         }
         else
         {
             Console.WriteLine("No fasteners to calculate!");
-            
         }
     }
 
@@ -152,6 +145,13 @@ public partial class CalculatePageViewModel : PageViewModel
     private void RemoveFastener(Fastener fastener)
     {
         FastenersToCalc.Remove(fastener);
+        CalculateAll();
+    } 
+    
+    [RelayCommand]
+    private void ClearFasteners()
+    {
+        FastenersToCalc.Clear();
         CalculateAll();
     }
 }

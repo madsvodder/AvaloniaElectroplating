@@ -15,8 +15,7 @@
             <StackPanel Spacing="10">
                 <TextBlock Text="Type"></TextBlock>
                 <ComboBox SelectedItem="{Binding SelectedFastenerType}" Width="100"
-                          ItemsSource="{Binding FastenerTypes}"
-                          SelectedIndex="0">
+                          ItemsSource="{Binding FastenerTypes}">
                 </ComboBox>
             </StackPanel>
             <!-- Metric size -->
@@ -36,6 +35,7 @@
             
             <!-- Plus button -->
             <Button Command="{Binding AddFastenerToListCommand}" VerticalAlignment="Bottom">Add</Button>
+            <Button Command="{Binding ClearFastenersCommand}" VerticalAlignment="Bottom">Clear</Button>
         </StackPanel>
 
         <!-- List -->
@@ -57,7 +57,7 @@
                 </ListBox>
 
             </ScrollViewer>
-            <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="32" Text="{Binding Total}">Result!</TextBlock>
+            <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="32" Text="{Binding TotalString}">Result!</TextBlock>
         </Grid>
         
             <!-- Calculate button and result -->

@@ -5,7 +5,6 @@ namespace AvaloniaElectroplating.Models;
 public abstract class Fastener
 {
     public FastenerType Type { get; set; }
-    
     public FastenerSize Size { get; set; }
     public string DisplayName { get; set; } = "NO DISPLAY NAME";
 

@@ -5,7 +5,7 @@ namespace AvaloniaElectroplating.Models;
 public class Bolt : Fastener
 {
     
-    public double ThreadLength { get; set; }
+    public double ThreadLength { get; }
 
     public Bolt(FastenerSize size, double threadLength)
     {

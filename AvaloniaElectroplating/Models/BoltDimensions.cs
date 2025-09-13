@@ -2,7 +2,7 @@ namespace AvaloniaElectroplating.Models;
 
 public class BoltDimensions
 {
-    public double Diameter { get;  }
+    public double Diameter { get; }
     public double WrenchSize { get; }
     public double HeadHeight { get; }
 

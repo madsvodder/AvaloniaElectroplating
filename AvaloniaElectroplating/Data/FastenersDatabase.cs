@@ -22,4 +22,13 @@ public class FastenersDatabase
         {FastenerSize.M10, new WasherDimensions(10.50, 20.00, 2.00)},
         {FastenerSize.M12, new WasherDimensions(13.00, 24.00, 2.50)},
     };
+    
+    public static Dictionary<FastenerSize, NutDimensions> NutsDictionary = new()
+    {
+        { FastenerSize.M6,  new NutDimensions(6, 10, 5)},
+        { FastenerSize.M8,  new NutDimensions(8, 13, 6.5)},
+        { FastenerSize.M10, new NutDimensions(10, 17, 8)},
+        { FastenerSize.M12, new NutDimensions(12, 19, 10)},
+        { FastenerSize.M16, new NutDimensions(16, 24, 13)},
+    };
 }
