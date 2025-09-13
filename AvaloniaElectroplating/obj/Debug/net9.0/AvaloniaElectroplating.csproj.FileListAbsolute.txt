@@ -68,3 +68,4 @@
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/ref/AvaloniaElectroplating.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/LucideAvalonia.dll

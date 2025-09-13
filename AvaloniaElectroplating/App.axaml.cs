@@ -26,14 +26,12 @@ public partial class App : Application
             // Dependency injection
             ServiceCollection collection = new();
             collection.AddSingleton<MainViewModel>();
-            collection.AddTransient<NotesPageViewModel>();
             collection.AddTransient<CalculatePageViewModel>();
 
             // Pass in ApplicationPageNames enum and return a PageViewModel
             collection.AddSingleton<Func<ApplicationPageNames, PageViewModel>>(x => name => name switch
             {
                 ApplicationPageNames.Calculate => x.GetRequiredService<CalculatePageViewModel>(),
-                ApplicationPageNames.Notes => x.GetRequiredService<NotesPageViewModel>(),
                 _ => throw new InvalidOperationException(),
             });
             

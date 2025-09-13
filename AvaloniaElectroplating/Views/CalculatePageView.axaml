@@ -4,65 +4,81 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:AvaloniaElectroplating.ViewModels"
              x:Name="Root"
+             xmlns:lucide="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaElectroplating.Views.CalculatePageView"
              x:DataType="vm:CalculatePageViewModel">
     <Grid RowDefinitions="Auto, *, Auto">
         
         <!-- Options -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="25" HorizontalAlignment="Center" Margin="0, 20, 0, 0">
-            <!-- Type -->
-            <StackPanel Spacing="10">
-                <TextBlock Text="Type"></TextBlock>
-                <ComboBox SelectedItem="{Binding SelectedFastenerType}" Width="100"
-                          ItemsSource="{Binding FastenerTypes}">
-                </ComboBox>
-            </StackPanel>
-            <!-- Metric size -->
-            <StackPanel Spacing="10">
-                <TextBlock Text="Metric size"></TextBlock>
-                <ComboBox Width="100" ItemsSource="{Binding AvailableSizes}"
-                          SelectedItem="{Binding SelectedFastenerSize}"
-                          SelectedIndex="0">
-                </ComboBox>
-            </StackPanel>
+        <Border 
+            CornerRadius="20" 
+            Margin="10" 
+            BoxShadow="0 4 12 0 #40000000">
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                <!-- Type -->
+                <StackPanel Spacing="10">
+                    <TextBlock Text="Type"></TextBlock>
+                    <ComboBox SelectedItem="{Binding SelectedFastenerType}" Width="100"
+                              ItemsSource="{Binding FastenerTypes}">
+                    </ComboBox>
+                </StackPanel>
+                <!-- Metric size -->
+                <StackPanel Spacing="10">
+                    <TextBlock Text="Metric size"></TextBlock>
+                    <ComboBox Width="100" ItemsSource="{Binding AvailableSizes}"
+                              SelectedItem="{Binding SelectedFastenerSize}"
+                              SelectedIndex="0">
+                    </ComboBox>
+                </StackPanel>
             
-            <!-- Thread length -->
-            <StackPanel Spacing="10">
-                <TextBlock Text="Thread length (mm)"></TextBlock>
-                <NumericUpDown Watermark="mm" Minimum="0" FormatString="0" Width="125" Value="{Binding Value}"></NumericUpDown>
-            </StackPanel>
+                <!-- Thread length -->
+                <StackPanel Spacing="10">
+                    <TextBlock Text="Thread length (mm)"></TextBlock>
+                    <NumericUpDown Watermark="mm" Minimum="0" FormatString="0" Width="125" Value="{Binding Value}"></NumericUpDown>
+                </StackPanel>
             
-            <!-- Plus button -->
-            <Button Command="{Binding AddFastenerToListCommand}" VerticalAlignment="Bottom">Add</Button>
-            <Button Command="{Binding ClearFastenersCommand}" VerticalAlignment="Bottom">Clear</Button>
-        </StackPanel>
+                <!-- Plus button -->
+                <Button Command="{Binding AddFastenerToListCommand}">Add</Button>
+                <Button Command="{Binding ClearFastenersCommand}">Clear</Button>
+            </StackPanel>
+        </Border>
+        
 
         <!-- List -->
-        <Grid Grid.Row="1" RowDefinitions="7*, 3*">
-            <ScrollViewer IsScrollChainingEnabled="true" Margin="30">
-                <ListBox ItemsSource="{Binding FastenersToCalc}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Spacing="10">
-                                <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
-                                <Button Command="{Binding #Root.((vm:CalculatePageViewModel)DataContext).RemoveFastenerCommand}"
-                                        CommandParameter="{Binding .}"
-                                        Grid.Column="1">
-                                    Delete
-                                </Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+        <Border 
 
-            </ScrollViewer>
-            <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="32" Text="{Binding TotalString}">Result!</TextBlock>
-        </Grid>
+            Grid.Row="1"
+            CornerRadius="20" 
+            Margin="10" 
+            BoxShadow="0 4 12 0 #40000000">
+            <Grid RowDefinitions="15*, 3*">
+                <ScrollViewer IsScrollChainingEnabled="true">
+                    <ListBox ItemsSource="{Binding FastenersToCalc}" Background="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Spacing="10">
+                                        <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
+                                        <Button Command="{Binding #Root.((vm:CalculatePageViewModel)DataContext).RemoveFastenerCommand}"
+                                                CommandParameter="{Binding .}"
+                                                Grid.Column="1">
+                                            Delete
+                                        </Button>
+                                    </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="32" Text="{Binding TotalString}">Result!</TextBlock>
+            </Grid>
+        </Border>
         
-            <!-- Calculate button and result -->
-        <StackPanel Grid.Row="2">
-        </StackPanel>
-
+        
+        <!-- Settings button -->
+        <Border Grid.Row="2" CornerRadius="15" BoxShadow="0 4 12 0 #40000000"  Width="50" HorizontalAlignment="Left" Margin="10">
+            <Button Margin="5" Background="Transparent">
+                <lucide:Lucide Icon="Settings"/>
+            </Button>
+        </Border>
     </Grid>
 </UserControl>

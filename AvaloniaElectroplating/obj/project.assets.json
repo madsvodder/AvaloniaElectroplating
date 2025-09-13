@@ -452,6 +452,18 @@
           }
         }
       },
+      "LucideAvalonia/1.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.1.0-beta1"
+        },
+        "compile": {
+          "lib/net8.0/LucideAvalonia.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/LucideAvalonia.dll": {}
+        }
+      },
       "MicroCom.Runtime/0.11.0": {
         "type": "package",
         "compile": {
@@ -1270,6 +1282,19 @@
         "runtimes/win-x86/native/libHarfBuzzSharp.dll"
       ]
     },
+    "LucideAvalonia/1.6.1": {
+      "sha512": "B+aXiORB98/yiXLur7gxlYKl7Xk1TYrYBCmrPlUaVBGkP2FraBoS5RMzOMaWpV9AgC5/P3F5maE1Hwb9ggfNAA==",
+      "type": "package",
+      "path": "lucideavalonia/1.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net8.0/LucideAvalonia.dll",
+        "lucideavalonia.1.6.1.nupkg.sha512",
+        "lucideavalonia.nuspec"
+      ]
+    },
     "MicroCom.Runtime/0.11.0": {
       "sha512": "MEnrZ3UIiH40hjzMDsxrTyi8dtqB5ziv3iBeeU4bXsL/7NLSal9F1lZKpK+tfBRnUoDSdtcW3KufE4yhATOMCA==",
       "type": "package",
@@ -1614,6 +1639,7 @@
       "Avalonia.Fonts.Inter >= 11.1.0",
       "Avalonia.Themes.Fluent >= 11.1.0",
       "CommunityToolkit.Mvvm >= 8.2.1",
+      "LucideAvalonia >= 1.6.1",
       "Microsoft.Extensions.DependencyInjection >= 10.0.0-preview.7.25380.108"
     ]
   },
@@ -1683,6 +1709,10 @@
           "CommunityToolkit.Mvvm": {
             "target": "Package",
             "version": "[8.2.1, )"
+          },
+          "LucideAvalonia": {
+            "target": "Package",
+            "version": "[1.6.1, )"
           },
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",

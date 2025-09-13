@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[8.2.1, )"
             },
+            "LucideAvalonia": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[10.0.0-preview.7.25380.108, )"

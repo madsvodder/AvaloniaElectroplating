@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yvDLNjaAXcI=",
+  "dgSpecHash": "SGEqMjgw50Q=",
   "success": true,
   "projectFilePath": "/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "/Users/madsvodder/.nuget/packages/harfbuzzsharp.nativeassets.macos/7.3.0.2/harfbuzzsharp.nativeassets.macos.7.3.0.2.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/7.3.0.2/harfbuzzsharp.nativeassets.webassembly.7.3.0.2.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/harfbuzzsharp.nativeassets.win32/7.3.0.2/harfbuzzsharp.nativeassets.win32.7.3.0.2.nupkg.sha512",
+    "/Users/madsvodder/.nuget/packages/lucideavalonia/1.6.1/lucideavalonia.1.6.1.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/microsoft.extensions.dependencyinjection/10.0.0-preview.7.25380.108/microsoft.extensions.dependencyinjection.10.0.0-preview.7.25380.108.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.0-preview.7.25380.108/microsoft.extensions.dependencyinjection.abstractions.10.0.0-preview.7.25380.108.nupkg.sha512",

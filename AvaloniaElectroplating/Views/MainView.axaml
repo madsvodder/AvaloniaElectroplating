@@ -15,19 +15,8 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel/>
     </Design.DataContext>
-
-    <SplitView DisplayMode="CompactInline" CompactPaneLength="100">
-        <SplitView.Pane>
-            <StackPanel HorizontalAlignment="Center" Spacing="10" >
-                <Button Content="Calculate" Width="80" Command="{Binding GoToCalculateCommand}"></Button>
-                <Button Content="Saved" Width="80"></Button>
-                <Button Content="Notes" Width="80" Command="{Binding GoToNotesCommand}"></Button>
-                <Button Content="Settings" Width="80"></Button>
-            </StackPanel>
-        </SplitView.Pane>
-        <SplitView.Content>
-            <ContentControl Content="{Binding CurrentPage}"></ContentControl>
-        </SplitView.Content>
-    </SplitView>
     
+    <Grid RowDefinitions="*">
+        <ContentControl Grid.Row="0" Content="{Binding CurrentPage}"></ContentControl>
+    </Grid>
 </Window>

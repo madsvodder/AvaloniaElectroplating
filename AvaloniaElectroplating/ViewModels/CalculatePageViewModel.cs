@@ -23,7 +23,7 @@ public partial class CalculatePageViewModel : PageViewModel
     [ObservableProperty] private FastenerSize? _selectedFastenerSize;
     [ObservableProperty] private double? _value;
     [ObservableProperty] private string _totalString = "";
-    public ObservableCollection<FastenerSize> AvailableSizes { get; } = new(); 
+    public ObservableCollection<FastenerSize> AvailableSizes { set; get; } = new(); 
     public ObservableCollection<Fastener> FastenersToCalc { get; } = new();
     
     public CalculatePageViewModel()
@@ -100,7 +100,6 @@ public partial class CalculatePageViewModel : PageViewModel
         }
         
         SelectedFastenerSize = AvailableSizes.FirstOrDefault();
-        Console.WriteLine(SelectedFastenerSize);
     }
     
     private void CalculateAll()
