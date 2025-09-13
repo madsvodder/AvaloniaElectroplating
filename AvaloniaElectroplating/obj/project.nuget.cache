@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SGEqMjgw50Q=",
+  "dgSpecHash": "QqA/JV/m/Zg=",
   "success": true,
   "projectFilePath": "/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "/Users/madsvodder/.nuget/packages/avalonia.diagnostics/11.1.0/avalonia.diagnostics.11.1.0.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/avalonia.fonts.inter/11.1.0/avalonia.fonts.inter.11.1.0.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/avalonia.freedesktop/11.1.0/avalonia.freedesktop.11.1.0.nupkg.sha512",
+    "/Users/madsvodder/.nuget/packages/avalonia.htmlrenderer/11.2.0/avalonia.htmlrenderer.11.2.0.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/avalonia.native/11.1.0/avalonia.native.11.1.0.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/avalonia.remote.protocol/11.1.0/avalonia.remote.protocol.11.1.0.nupkg.sha512",
     "/Users/madsvodder/.nuget/packages/avalonia.skia/11.1.0/avalonia.skia.11.1.0.nupkg.sha512",

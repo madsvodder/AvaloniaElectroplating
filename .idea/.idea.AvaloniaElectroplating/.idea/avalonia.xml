@@ -10,6 +10,8 @@
         <entry key="AvaloniaElectroplating/Views/MainWindow.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
         <entry key="AvaloniaElectroplating/Views/NotesPageView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
         <entry key="AvaloniaElectroplating/Views/NotesView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+        <entry key="AvaloniaElectroplating/Views/WelcomePageView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+        <entry key="AvaloniaElectroplating/Views/WelcomePageWindow.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
       </map>
     </option>
   </component>

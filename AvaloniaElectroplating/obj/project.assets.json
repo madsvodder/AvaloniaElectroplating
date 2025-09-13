@@ -213,6 +213,18 @@
           }
         }
       },
+      "Avalonia.HtmlRenderer/11.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.1.0"
+        },
+        "compile": {
+          "lib/net8.0/Avalonia.HtmlRenderer.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.HtmlRenderer.dll": {}
+        }
+      },
       "Avalonia.Native/11.1.0": {
         "type": "package",
         "dependencies": {
@@ -954,6 +966,20 @@
         "lib/netstandard2.0/Avalonia.FreeDesktop.xml"
       ]
     },
+    "Avalonia.HtmlRenderer/11.2.0": {
+      "sha512": "TiqG8Cg/WpgSAhgEtCUTSKHuh3B8jcRa4qprmZ2tCmeTNDbFEpViXzHC8XT4twh4GkmjuO5Y/5UJjfYZHUa4Mw==",
+      "type": "package",
+      "path": "avalonia.htmlrenderer/11.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "avalonia.htmlrenderer.11.2.0.nupkg.sha512",
+        "avalonia.htmlrenderer.nuspec",
+        "icon.png",
+        "lib/net8.0/Avalonia.HtmlRenderer.dll",
+        "lib/netstandard2.0/Avalonia.HtmlRenderer.dll"
+      ]
+    },
     "Avalonia.Native/11.1.0": {
       "sha512": "HVe1HwOfwL7GG8UaUTUYqTP7007Ja6WxP65DG46q7j60kWkg5oomeRHW+Xm4mGd+H1ye5Q9fi1okg+sG24PgFQ==",
       "type": "package",
@@ -1637,6 +1663,7 @@
       "Avalonia.Desktop >= 11.1.0",
       "Avalonia.Diagnostics >= 11.1.0",
       "Avalonia.Fonts.Inter >= 11.1.0",
+      "Avalonia.HtmlRenderer >= 11.2.0",
       "Avalonia.Themes.Fluent >= 11.1.0",
       "CommunityToolkit.Mvvm >= 8.2.1",
       "LucideAvalonia >= 1.6.1",
@@ -1701,6 +1728,10 @@
           "Avalonia.Fonts.Inter": {
             "target": "Package",
             "version": "[11.1.0, )"
+          },
+          "Avalonia.HtmlRenderer": {
+            "target": "Package",
+            "version": "[11.2.0, )"
           },
           "Avalonia.Themes.Fluent": {
             "target": "Package",
