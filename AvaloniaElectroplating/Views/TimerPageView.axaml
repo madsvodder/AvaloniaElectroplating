@@ -3,8 +3,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mv="clr-namespace:AvaloniaElectroplating.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="450"
              x:DataType="mv:TimerPageViewModel"
              x:Class="AvaloniaElectroplating.Views.TimerPageView">
-    Welcome to Avalonia!
+    <Border CornerRadius="20"
+            Margin="5"
+            BoxShadow="0 4 12 0 #40000000"
+            Padding="10"
+            >
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="{Binding TimeString}" FontSize="28">20:00</TextBlock>
+            <Button Command="{Binding SetTimerCommand}" Content="{Binding ButtonString}" HorizontalAlignment="Center"></Button>
+        </StackPanel>
+    </Border>
 </UserControl>

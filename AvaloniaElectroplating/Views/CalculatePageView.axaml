@@ -8,28 +8,40 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaElectroplating.Views.CalculatePageView"
              x:DataType="vm:CalculatePageViewModel">
-    <Grid ColumnDefinitions="Auto, *">
+    <Grid ColumnDefinitions="Auto, *, Auto" Margin="5">
         <!-- Sidebar -->
-        <Border VerticalAlignment="Bottom" Grid.Column="0" Margin="10 10 0 10" CornerRadius="20"
-                BoxShadow="0 4 12 0 #40000000" Height="50">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Command="{Binding NavigateToSettingsCommand}" Background="Transparent">
-                    <lucide:Lucide Icon="Settings"></lucide:Lucide>
-                </Button>
-                <Button Background="Transparent">
-                    <lucide:Lucide Icon="Info"></lucide:Lucide>
-                </Button>
-            </StackPanel>
-        </Border>
+        <Grid Grid.Column="0" RowDefinitions="*, Auto">
+            
+            <!-- Timer -->
+            <ContentControl Width="200"><vm:TimerPageViewModel></vm:TimerPageViewModel></ContentControl>
+            
+            <!-- Settings and info -->
+            <Border Margin="5" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="0"  CornerRadius="20"
+                    BoxShadow="0 4 12 0 #40000000" Height="50">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Command="{Binding NavigateToSettingsCommand}" Background="Transparent">
+                        <lucide:Lucide Icon="Settings"></lucide:Lucide>
+                    </Button>
+                    <Button Background="Transparent">
+                        <lucide:Lucide Icon="Info"></lucide:Lucide>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+        
+        
         <!-- Content -->
         <Grid Grid.Column="1" RowDefinitions="Auto, *, Auto">
+            
             <!-- Options -->
             <Border
-                CornerRadius="20"
-                Margin="10"
-                BoxShadow="0 4 12 0 #40000000">
+                CornerRadius="20 20 0 0"
+                BoxShadow="0 0 10 0 #40000000"
+                Margin="5 5 5 0"
+                Padding="10"
+                >
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="25" HorizontalAlignment="Center"
-                            VerticalAlignment="Center" Margin="20">
+                            VerticalAlignment="Center">
                     <!-- Type -->
                     <StackPanel Spacing="10">
                         <TextBlock Text="Type"></TextBlock>
@@ -61,13 +73,13 @@
 
             <!-- List -->
             <Border
-
                 Grid.Row="1"
-                CornerRadius="20"
-                Margin="10"
-                BoxShadow="0 4 12 0 #40000000">
+                CornerRadius="0 0 20 20"
+                BoxShadow="0 4 12 0 #40000000"
+                Margin="5 0 5 5"
+                >
                 <Grid RowDefinitions="15*, 3*">
-                    <ScrollViewer IsScrollChainingEnabled="true">
+                    <ScrollViewer IsScrollChainingEnabled="true" AllowAutoHide="false">
                         <ListBox ItemsSource="{Binding FastenersToCalc}" Background="Transparent">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
