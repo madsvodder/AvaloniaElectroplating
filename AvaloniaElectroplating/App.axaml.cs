@@ -23,28 +23,16 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Dependency injection
-            ServiceCollection collection = new();
-            collection.AddSingleton<MainViewModel>();
-            collection.AddTransient<CalculatePageViewModel>();
-
-            // Pass in ApplicationPageNames enum and return a PageViewModel
-            collection.AddSingleton<Func<ApplicationPageNames, PageViewModel>>(x => name => name switch
-            {
-                ApplicationPageNames.Calculate => x.GetRequiredService<CalculatePageViewModel>(),
-                _ => throw new InvalidOperationException(),
-            });
             
-            collection.AddSingleton<PageFactory>();
-            
-            var services = collection.BuildServiceProvider();
+            // Page Factory
+            PageFactory pageFactory = new();
             
             // Line below is needed to remove Avalonia data validation.
             // Without this line you will get duplicate validations from both Avalonia and CT
             BindingPlugins.DataValidators.RemoveAt(0);
             desktop.MainWindow = new MainView
             {
-                DataContext = services.GetRequiredService<MainViewModel>()
+                DataContext = new MainViewModel(pageFactory)
             };
         }
 

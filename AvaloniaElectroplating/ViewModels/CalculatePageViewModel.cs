@@ -4,9 +4,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using AvaloniaElectroplating.Enums;
 using AvaloniaElectroplating.Factories;
+using AvaloniaElectroplating.Messages;
 using AvaloniaElectroplating.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace AvaloniaElectroplating.ViewModels;
 
@@ -35,6 +37,12 @@ public partial class CalculatePageViewModel : PageViewModel
         
         // Populates the list of sizes at the start
         OnSelectedFastenerTypeChanged(SelectedFastenerType);
+    }
+
+    [RelayCommand]
+    private void NavigateToSettings()
+    {
+        WeakReferenceMessenger.Default.Send(new NavigateToMessage(ApplicationPageNames.Settings));
     }
 
     [RelayCommand]

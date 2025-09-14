@@ -7,13 +7,15 @@
         x:Class="AvaloniaElectroplating.Views.WelcomePageWindow"
         x:DataType="vm:WelcomePageViewModel"
         WindowStartupLocation="CenterScreen"
-        Title="WelcomePageWindow">
+        Width="575"
+        Height="150"
+        Title="Welcome!">
     
         <Panel>
             <StackPanel Margin="20" Spacing="10">
-                <TextBlock Text="Welcome to MyApp!"/>
+                <TextBlock Text="Welcome!"/>
                 <TextBlock Text="This application is in very early development, so feedback is much appreciated!"/>
-                <TextBlock Text="Tips are very welcome!"/>
+                <TextBlock Text="Tips are also very welcome!"/>
                 <Button Command="{Binding OpenLinkCommand}" Content="☕ Support me on Ko-fi"/>
             </StackPanel>
         </Panel>

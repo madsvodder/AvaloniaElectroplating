@@ -22,9 +22,10 @@ public partial class MainView : Window
             m.Reply(dialog.ShowDialog<WelcomePageViewModel?>(w));
         });
 
+        /*
         this.Opened += async (_, _) =>
         {
             WeakReferenceMessenger.Default.Send(new WelcomeMessage());
-        };
+        };*/
     }
 }

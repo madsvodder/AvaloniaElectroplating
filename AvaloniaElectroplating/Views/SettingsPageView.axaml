@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mv="clr-namespace:AvaloniaElectroplating.ViewModels"
+             xmlns:lucideAvalonia="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="mv:SettingsPageViewModel"
+             x:Class="AvaloniaElectroplating.Views.SettingsPageView">
+    <Grid RowDefinitions="*, Auto">
+        <!-- Content -->
+        <TextBlock Grid.Row="0">Welcome to the empty settings page!</TextBlock>
+        
+        <!-- Back button -->
+        <Border Grid.Row="1" CornerRadius="15" BoxShadow="0 4 12 0 #40000000"  Width="50" Height="50" HorizontalAlignment="Left" Margin="10">
+            <Button Command="{Binding NavigateBackCommand}" Margin="5" Background="Transparent">
+                <lucideAvalonia:Lucide Icon="ArrowLeft"/>
+            </Button>
+        </Border>
+    </Grid>
+</UserControl>

@@ -8,77 +8,85 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaElectroplating.Views.CalculatePageView"
              x:DataType="vm:CalculatePageViewModel">
-    <Grid RowDefinitions="Auto, *, Auto">
-        
-        <!-- Options -->
-        <Border 
-            CornerRadius="20" 
-            Margin="10" 
-            BoxShadow="0 4 12 0 #40000000">
-            <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-                <!-- Type -->
-                <StackPanel Spacing="10">
-                    <TextBlock Text="Type"></TextBlock>
-                    <ComboBox SelectedItem="{Binding SelectedFastenerType}" Width="100"
-                              ItemsSource="{Binding FastenerTypes}">
-                    </ComboBox>
-                </StackPanel>
-                <!-- Metric size -->
-                <StackPanel Spacing="10">
-                    <TextBlock Text="Metric size"></TextBlock>
-                    <ComboBox Width="100" ItemsSource="{Binding AvailableSizes}"
-                              SelectedItem="{Binding SelectedFastenerSize}"
-                              SelectedIndex="0">
-                    </ComboBox>
-                </StackPanel>
-            
-                <!-- Thread length -->
-                <StackPanel Spacing="10">
-                    <TextBlock Text="Thread length (mm)"></TextBlock>
-                    <NumericUpDown Watermark="mm" Minimum="0" FormatString="0" Width="125" Value="{Binding Value}"></NumericUpDown>
-                </StackPanel>
-            
-                <!-- Plus button -->
-                <Button Command="{Binding AddFastenerToListCommand}">Add</Button>
-                <Button Command="{Binding ClearFastenersCommand}">Clear</Button>
+    <Grid ColumnDefinitions="Auto, *">
+        <!-- Sidebar -->
+        <Border VerticalAlignment="Bottom" Grid.Column="0" Margin="10 10 0 10" CornerRadius="20"
+                BoxShadow="0 4 12 0 #40000000" Height="50">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Command="{Binding NavigateToSettingsCommand}" Background="Transparent">
+                    <lucide:Lucide Icon="Settings"></lucide:Lucide>
+                </Button>
+                <Button Background="Transparent">
+                    <lucide:Lucide Icon="Info"></lucide:Lucide>
+                </Button>
             </StackPanel>
         </Border>
-        
+        <!-- Content -->
+        <Grid Grid.Column="1" RowDefinitions="Auto, *, Auto">
+            <!-- Options -->
+            <Border
+                CornerRadius="20"
+                Margin="10"
+                BoxShadow="0 4 12 0 #40000000">
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="25" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Margin="20">
+                    <!-- Type -->
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Type"></TextBlock>
+                        <ComboBox SelectedItem="{Binding SelectedFastenerType}" Width="100"
+                                  ItemsSource="{Binding FastenerTypes}">
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Metric size -->
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Metric size"></TextBlock>
+                        <ComboBox Width="100" ItemsSource="{Binding AvailableSizes}"
+                                  SelectedItem="{Binding SelectedFastenerSize}"
+                                  SelectedIndex="0">
+                        </ComboBox>
+                    </StackPanel>
 
-        <!-- List -->
-        <Border 
+                    <!-- Thread length -->
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Thread length (mm)"></TextBlock>
+                        <NumericUpDown Watermark="mm" Minimum="0" FormatString="0" Width="125" Value="{Binding Value}"></NumericUpDown>
+                    </StackPanel>
 
-            Grid.Row="1"
-            CornerRadius="20" 
-            Margin="10" 
-            BoxShadow="0 4 12 0 #40000000">
-            <Grid RowDefinitions="15*, 3*">
-                <ScrollViewer IsScrollChainingEnabled="true">
-                    <ListBox ItemsSource="{Binding FastenersToCalc}" Background="Transparent">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
+                    <!-- Plus button -->
+                    <Button Command="{Binding AddFastenerToListCommand}">Add</Button>
+                    <Button Command="{Binding ClearFastenersCommand}">Clear</Button>
+                </StackPanel>
+            </Border>
+
+
+            <!-- List -->
+            <Border
+
+                Grid.Row="1"
+                CornerRadius="20"
+                Margin="10"
+                BoxShadow="0 4 12 0 #40000000">
+                <Grid RowDefinitions="15*, 3*">
+                    <ScrollViewer IsScrollChainingEnabled="true">
+                        <ListBox ItemsSource="{Binding FastenersToCalc}" Background="Transparent">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
                                     <StackPanel Orientation="Horizontal" Spacing="10">
-                                        <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
-                                        <Button Command="{Binding #Root.((vm:CalculatePageViewModel)DataContext).RemoveFastenerCommand}"
-                                                CommandParameter="{Binding .}"
-                                                Grid.Column="1">
+                                        <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center" />
+                                        <Button
+                                            Command="{Binding #Root.((vm:CalculatePageViewModel)DataContext).RemoveFastenerCommand}"
+                                            CommandParameter="{Binding .}"
+                                            Grid.Column="1">
                                             Delete
                                         </Button>
                                     </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </ScrollViewer>
-                <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="32" Text="{Binding TotalString}">Result!</TextBlock>
-            </Grid>
-        </Border>
-        
-        
-        <!-- Settings button -->
-        <Border Grid.Row="2" CornerRadius="15" BoxShadow="0 4 12 0 #40000000"  Width="50" HorizontalAlignment="Left" Margin="10">
-            <Button Margin="5" Background="Transparent">
-                <lucide:Lucide Icon="Settings"/>
-            </Button>
-        </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </ScrollViewer>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="32" Text="{Binding TotalString}">Result!</TextBlock>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

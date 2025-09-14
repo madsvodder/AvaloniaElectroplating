@@ -11,32 +11,44 @@ using CommunityToolkit.Mvvm.Messaging;
 
 namespace AvaloniaElectroplating.ViewModels;
 
-public partial class MainViewModel : ViewModelBase
+public partial class MainViewModel : ViewModelBase, IRecipient<NavigateToMessage>
 {
-    /// <summary>
-    /// Design time constructor
-    /// </summary>
-    public MainViewModel()
-    {
-        CurrentPage = new CalculatePageViewModel();
-    }
+
+    [ObservableProperty]
+    private PageViewModel? _currentPage;
 
     private PageFactory _pageFactory;
     
-    [ObservableProperty]
-    private PageViewModel _currentPage;
-
+    // Constructor for live design
+    public MainViewModel(){}
     public MainViewModel(PageFactory pageFactory)
     {
         _pageFactory = pageFactory;
+        
+        WeakReferenceMessenger.Default.Register<NavigateToMessage>(this);
+        
+        NavigateTo(ApplicationPageNames.Calculate);
+    }
 
-        GoToCalculate();
+    public void Receive(NavigateToMessage message)
+    {
+        NavigateTo(message.Value);
+    }
+
+    private void NavigateTo(ApplicationPageNames page)
+    {
+        CurrentPage = page switch
+        {
+            ApplicationPageNames.Calculate => _pageFactory.CreatePage(ApplicationPageNames.Calculate),
+            ApplicationPageNames.Settings => _pageFactory.CreatePage(ApplicationPageNames.Settings),
+            _ => throw new ArgumentOutOfRangeException(),
+        };
     }
 
     [RelayCommand]
-    private void GoToCalculate() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageNames.Calculate);
-    
-    [RelayCommand]
-    private void GoToNotes() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageNames.Notes);
+    private void NavigateToSettings()
+    {
+        CurrentPage = _pageFactory.CreatePage(ApplicationPageNames.Settings);
+    }
     
 }

@@ -6,12 +6,32 @@ namespace AvaloniaElectroplating.Factories;
 
 public class PageFactory
 {
-    private readonly Func<ApplicationPageNames, PageViewModel> _factory;
     
-    public PageFactory(Func<ApplicationPageNames, PageViewModel> factory)
+    // Here we create the singletons.
+    // The switch statement creates the transients / always new pages.
+    
+    // Singletons
+    private CalculatePageViewModel _calculateVm;
+
+    public PageFactory()
     {
-        _factory = factory;
+        // Initialize singletons
+        _calculateVm = new CalculatePageViewModel();
     }
 
-    public PageViewModel GetPageViewModel(ApplicationPageNames pageName) => _factory.Invoke(pageName);
+    public PageViewModel CreatePage(ApplicationPageNames names)
+    {
+        switch (names)
+        {
+            case ApplicationPageNames.Calculate:
+                return _calculateVm;
+            
+            case ApplicationPageNames.Settings:
+                return new SettingsPageViewModel();
+            
+            default:
+                Console.WriteLine("No page inserted in factory method?");
+                return null;
+        }
+    }
 }
