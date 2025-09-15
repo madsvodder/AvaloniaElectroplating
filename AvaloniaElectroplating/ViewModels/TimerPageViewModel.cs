@@ -9,13 +9,15 @@ namespace AvaloniaElectroplating.ViewModels;
 public partial class TimerPageViewModel : ViewModelBase
 {
 
+    // Default to 20 minutes
+    [ObservableProperty] private int _selectedTime = 20;
     [ObservableProperty] private int _currentTime;
-    [ObservableProperty] private string _timeString = "20:00";
+    [ObservableProperty] private string _timeString = "";
     [ObservableProperty] private bool _isTimerEnabled = false;
     [ObservableProperty] private string _buttonString = "Start";
     
-    // 20 minutes in seconds
-    private TimeSpan _time = TimeSpan.FromMinutes(20);
+    // Time that is counting down
+    private TimeSpan _time;
     
     // Timer
     private DispatcherTimer timer = new();
@@ -29,8 +31,10 @@ public partial class TimerPageViewModel : ViewModelBase
         }
         else
         {
+            _time = TimeSpan.FromMinutes(SelectedTime);
             IsTimerEnabled = true;
             ButtonString = "Stop";
+            TimeString = SelectedTime.ToString("00") + ":00";
             timer.Tick += TimerOnTick;
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Start();
@@ -57,13 +61,12 @@ public partial class TimerPageViewModel : ViewModelBase
         ResetTimer();
         ButtonString = "Start";
     }
-
-
+    
     private void ResetTimer()
     {
-        _time = TimeSpan.FromMinutes(20);
+        _time = TimeSpan.FromMinutes(SelectedTime);
         CurrentTime = 0;
-        TimeString = "20:00";
+        TimeString = "";
         IsTimerEnabled = false;
     }
     

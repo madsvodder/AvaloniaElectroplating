@@ -15,7 +15,6 @@
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.Vulkan.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.Controls.ColorPicker.dll
-/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.Controls.DataGrid.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.Desktop.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.Diagnostics.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.Fonts.Inter.dll
@@ -60,9 +59,6 @@
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.AssemblyInfo.cs
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.csproj.CoreCompileInputs.cache
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.sourcelink.json
-/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/Avalonia/AvaloniaElectroplating.dll
-/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/Avalonia/AvaloniaElectroplating.pdb
-/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/refint/Avalonia/AvaloniaElectroplating.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/Avalonia.95B20211.Up2Date
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.genruntimeconfig.cache
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/ref/AvaloniaElectroplating.dll
@@ -70,3 +66,15 @@
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/LucideAvalonia.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.HtmlRenderer.dll
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.Win32.Automation.dll
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Semi.Avalonia.dll
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-loongarch64/native/libHarfBuzzSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libHarfBuzzSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libHarfBuzzSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-loongarch64/native/libHarfBuzzSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-riscv64/native/libHarfBuzzSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-riscv64/native/libHarfBuzzSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-x86/native/libHarfBuzzSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.dll
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/refint/AvaloniaElectroplating.dll
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.pdb

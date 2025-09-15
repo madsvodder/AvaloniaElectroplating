@@ -12,7 +12,8 @@
             Padding="10"
             >
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="{Binding TimeString}" FontSize="28">20:00</TextBlock>
+            <NumericUpDown Minimum="1" FormatString="0" Increment="1" IsVisible="{Binding !IsTimerEnabled}" Value="{Binding SelectedTime}"></NumericUpDown>
+            <TextBlock IsVisible="{Binding IsTimerEnabled}" Text="{Binding TimeString}" FontSize="28">20:00</TextBlock>
             <Button Command="{Binding SetTimerCommand}" Content="{Binding ButtonString}" HorizontalAlignment="Center"></Button>
         </StackPanel>
     </Border>
