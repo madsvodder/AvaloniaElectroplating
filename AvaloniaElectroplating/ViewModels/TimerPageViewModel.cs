@@ -20,7 +20,7 @@ public partial class TimerPageViewModel : ViewModelBase
     private TimeSpan _time;
     
     // Timer
-    private DispatcherTimer timer = new();
+    private DispatcherTimer _timer = new();
     
     [RelayCommand]
     private void SetTimer()
@@ -35,9 +35,9 @@ public partial class TimerPageViewModel : ViewModelBase
             IsTimerEnabled = true;
             ButtonString = "Stop";
             TimeString = SelectedTime.ToString("00") + ":00";
-            timer.Tick += TimerOnTick;
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Start();
+            _timer.Tick += TimerOnTick;
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Start();
         }
     }
 
@@ -46,18 +46,23 @@ public partial class TimerPageViewModel : ViewModelBase
         if (_time == TimeSpan.Zero)
         {
             StopTimer();
+            return;
         }
 
         _time = _time.Add(TimeSpan.FromSeconds(-1));
-        //TimeString = _time.ToString("c");
-        string formatted = _time.ToString(@"mm\:ss");
-        TimeString = formatted;
+        UpdateTime();
+    }
+
+    private void UpdateTime()
+    {
+        TimeString = _time.ToString(@"mm\:ss");
+        CurrentTime = (int)_time.TotalSeconds;
     }
 
     private void StopTimer()
     {
-        timer.Stop();
-        timer.Tick -= TimerOnTick; // prevents duplicate firing
+        _timer.Stop();
+        _timer.Tick -= TimerOnTick; // prevents duplicate firing
         ResetTimer();
         ButtonString = "Start";
     }
@@ -69,5 +74,11 @@ public partial class TimerPageViewModel : ViewModelBase
         TimeString = "";
         IsTimerEnabled = false;
     }
-    
+    [RelayCommand]
+    private void AddOneMinute()
+    {
+        _time = _time.Add(TimeSpan.FromMinutes(1));
+        UpdateTime();
+        Console.WriteLine("Added one minute");
+    }
 }

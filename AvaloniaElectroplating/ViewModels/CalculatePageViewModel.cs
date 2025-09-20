@@ -17,6 +17,9 @@ public partial class CalculatePageViewModel : PageViewModel
     // Calculator classes - Change to dependency injection?
     private CalculatorFactory _calculatorFactory = new();
     private FastenerFactory _fc = new();
+
+    // Timer view model - CHANGE THIS SO IT COMES FROM THE FACTORY!?
+    [ObservableProperty] private TimerPageViewModel _timerPage = new();
     
     [ObservableProperty] private List<FastenerType> _fastenerTypes;
     [ObservableProperty] private FastenerType _selectedFastenerType;

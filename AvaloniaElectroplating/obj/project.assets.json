@@ -1823,19 +1823,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/madsvodder/.nuget/packages/": {}
+    "/home/mads/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
+      "projectUniqueName": "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
       "projectName": "AvaloniaElectroplating",
-      "projectPath": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
-      "packagesPath": "/Users/madsvodder/.nuget/packages/",
-      "outputPath": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/obj/",
+      "projectPath": "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
+      "packagesPath": "/home/mads/.nuget/packages/",
+      "outputPath": "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/madsvodder/.nuget/NuGet/NuGet.Config"
+        "/home/mads/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -1859,7 +1859,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -1926,7 +1926,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/mads/.dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

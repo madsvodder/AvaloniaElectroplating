@@ -13,7 +13,7 @@
         <Grid Grid.Column="0" RowDefinitions="Auto, Auto" VerticalAlignment="Bottom">
             
             <!-- Timer -->
-            <ContentControl Width="200"><vm:TimerPageViewModel></vm:TimerPageViewModel></ContentControl>
+            <ContentControl Width="200" Content="{Binding TimerPage}"></ContentControl>
             <!-- Settings and info -->
             <Border Margin="5" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="0"  CornerRadius="20"
                     BoxShadow="0 4 12 0 #40000000" Height="50">
