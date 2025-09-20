@@ -13,6 +13,8 @@ public class FastenerFactory
         {
             case FastenerType.Bolt:
                 return CreateBolt(selectedFastenerSize, value.Value);
+            case FastenerType.UmbracoBolt:
+                return CreateUmbracoBolt(selectedFastenerSize, value.Value);
             case FastenerType.Washer:
                 return CreateWasher(selectedFastenerSize);
             case FastenerType.Nut:
@@ -34,6 +36,21 @@ public class FastenerFactory
         {
             Console.WriteLine(e.Message);
             return new Bolt(FastenerSize.Undefined, 0);
+        }
+    }
+    
+    public UmbracoBolt CreateUmbracoBolt(FastenerSize selectedFastenerSize, double value)
+    {
+        try
+        {
+            var b = new UmbracoBolt(selectedFastenerSize, value);
+            b.DisplayName = string.Format("{0} {1} {2}{3}", b.Type, b.Size, b.ThreadLength, "mm");
+            return b;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return new UmbracoBolt(FastenerSize.Undefined, 0);
         }
     }
     

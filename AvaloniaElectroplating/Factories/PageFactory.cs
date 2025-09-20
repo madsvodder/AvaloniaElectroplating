@@ -9,15 +9,7 @@ public class PageFactory
     
     // Here we create the singletons.
     // The switch statement creates the transients / always new pages.
-    
-    // Singletons
-    private CalculatePageViewModel _calculateVm;
-
-    public PageFactory()
-    {
-        // Initialize singletons
-        _calculateVm = new CalculatePageViewModel();
-    }
+    private CalculatePageViewModel _calculateVm = new();
 
     public PageViewModel CreatePage(ApplicationPageNames names)
     {
@@ -28,6 +20,9 @@ public class PageFactory
             
             case ApplicationPageNames.Settings:
                 return new SettingsPageViewModel();
+            
+            case ApplicationPageNames.About:
+                return new AboutPageViewModel();
             
             default:
                 Console.WriteLine("No page inserted in factory method?");

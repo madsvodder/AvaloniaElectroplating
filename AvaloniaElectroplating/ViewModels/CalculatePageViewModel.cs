@@ -15,10 +15,8 @@ namespace AvaloniaElectroplating.ViewModels;
 public partial class CalculatePageViewModel : PageViewModel
 {
     // Calculator classes - Change to dependency injection?
-    FastenerFactory fc = new();
-    BoltCalculator bc = new();
-    WasherCalculator wc = new();
-    NutCalculator nc = new();
+    private CalculatorFactory _calculatorFactory = new();
+    private FastenerFactory _fc = new();
     
     [ObservableProperty] private List<FastenerType> _fastenerTypes;
     [ObservableProperty] private FastenerType _selectedFastenerType;
@@ -44,6 +42,12 @@ public partial class CalculatePageViewModel : PageViewModel
     {
         WeakReferenceMessenger.Default.Send(new NavigateToMessage(ApplicationPageNames.Settings));
     }
+    [RelayCommand]
+    private void NavigateToAbout()
+    {
+        WeakReferenceMessenger.Default.Send(new NavigateToMessage(ApplicationPageNames.About));
+
+    }
 
     [RelayCommand]
     private void AddFastenerToList()
@@ -62,12 +66,24 @@ public partial class CalculatePageViewModel : PageViewModel
                     Console.WriteLine("Bolt requires a value!");
                     return;
                 }
-                FastenersToCalc.Add(fc.CreateFastener(Value.Value, SelectedFastenerSize.Value, SelectedFastenerType));
+                FastenersToCalc.Add(_fc.CreateFastener(Value.Value, SelectedFastenerSize.Value, SelectedFastenerType));
+                break;
+            
+            case FastenerType.UmbracoBolt:
+                if (!Value.HasValue)
+                {
+                    Console.WriteLine("Umbraco bolt requires a value!");
+                    return;
+                }
+                FastenersToCalc.Add(_fc.CreateFastener(Value.Value, SelectedFastenerSize.Value, SelectedFastenerType));
                 break;
             
             case FastenerType.Nut:
+                FastenersToCalc.Add(_fc.CreateFastener(null, SelectedFastenerSize.Value, SelectedFastenerType));
+                break;
+                
             case FastenerType.Washer:
-                FastenersToCalc.Add(fc.CreateFastener(null, SelectedFastenerSize.Value, SelectedFastenerType));
+                FastenersToCalc.Add(_fc.CreateFastener(null, SelectedFastenerSize.Value, SelectedFastenerType));
                 break;
             
             default:
@@ -88,6 +104,11 @@ public partial class CalculatePageViewModel : PageViewModel
         {
             case FastenerType.Bolt:
                 foreach (var size in FastenersDatabase.BoltsDictionary.Keys)
+                    AvailableSizes.Add(size);
+                break;
+            
+            case FastenerType.UmbracoBolt:
+                foreach (var size in FastenersDatabase.UmbracoBoltsDictionary.Keys)
                     AvailableSizes.Add(size);
                 break;
             
@@ -125,13 +146,20 @@ public partial class CalculatePageViewModel : PageViewModel
                 switch (fa.Type)
                 {
                     case FastenerType.Bolt:
-                        bc.CalculateSurfaceArea((Bolt) fa);
+                        var bc = _calculatorFactory.CreateCalculator(FastenerType.Bolt);
+                        bc.CalculateSurfaceArea(fa);
+                        break;
+                    case FastenerType.UmbracoBolt:
+                        var ubc = _calculatorFactory.CreateCalculator(FastenerType.UmbracoBolt);
+                        ubc.CalculateSurfaceArea(fa);
                         break;
                     case FastenerType.Washer:
-                        wc.CalculateSurfaceArea((Washer)fa);
+                        var wc = _calculatorFactory.CreateCalculator(FastenerType.Washer);
+                        wc.CalculateSurfaceArea(fa);
                         break;
                     case FastenerType.Nut:
-                        nc.CalculateSurfaceArea((Nut)fa);
+                        var nc = _calculatorFactory.CreateCalculator(FastenerType.Nut);
+                        nc.CalculateSurfaceArea(fa);
                         break;
                 }
 

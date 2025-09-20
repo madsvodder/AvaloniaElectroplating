@@ -5,6 +5,7 @@
       <map>
         <entry key="AvaloniaElectroplating/App.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
         <entry key="AvaloniaElectroplating/ViewModels/NewCalculatePageViewModel.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
+        <entry key="AvaloniaElectroplating/Views/AboutPageView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
         <entry key="AvaloniaElectroplating/Views/CalculatePageView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
         <entry key="AvaloniaElectroplating/Views/MainView.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />
         <entry key="AvaloniaElectroplating/Views/MainWindow.axaml" value="AvaloniaElectroplating/AvaloniaElectroplating.csproj" />

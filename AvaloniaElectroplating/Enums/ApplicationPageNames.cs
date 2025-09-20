@@ -4,4 +4,5 @@ public enum ApplicationPageNames
 {
     Calculate,
     Settings,
+    About
 }

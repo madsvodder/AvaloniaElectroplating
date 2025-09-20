@@ -43,4 +43,19 @@ public class FastenersDatabase
         { FastenerSize.M16, new NutDimensions(16, 24, 13) },
         { FastenerSize.M20, new NutDimensions(20, 30, 16) },
     };
+    
+    public static Dictionary<FastenerSize, UmbracoBoltDimensions> UmbracoBoltsDictionary = new()
+    {
+        { FastenerSize.M3,  new UmbracoBoltDimensions(3,   5.5,  3,   2.5) },
+        { FastenerSize.M4,  new UmbracoBoltDimensions(4,   7,    4,   3)   },
+        { FastenerSize.M5,  new UmbracoBoltDimensions(5,   8.5,  5,   4)   },
+        { FastenerSize.M6,  new UmbracoBoltDimensions(6,   10,   6,   5)   },
+        { FastenerSize.M8,  new UmbracoBoltDimensions(8,   13,   8,   6)   },
+        { FastenerSize.M10, new UmbracoBoltDimensions(10,  16,   10,  8)  },
+        { FastenerSize.M12, new UmbracoBoltDimensions(12,  18,   12,  10) },
+        { FastenerSize.M14, new UmbracoBoltDimensions(14,  21,   14,  10) },
+        { FastenerSize.M16, new UmbracoBoltDimensions(16,  24,   16,  12) },
+        { FastenerSize.M20, new UmbracoBoltDimensions(20,  30,   20,  17) },
+    };
+
 }

@@ -1,18 +1,21 @@
 using System;
-using AvaloniaElectroplating.Enums;
 using AvaloniaElectroplating.Models;
 
-namespace AvaloniaElectroplating;
+namespace AvaloniaElectroplating.Services;
 
-public class BoltCalculator
+public class BoltCalculator : ICalculator
 {
-    public double CalculateSurfaceArea(Bolt bolt)
+    public double CalculateSurfaceArea(Fastener fastener)
     {
+        if (fastener is not Bolt bolt)
+            throw new ArgumentException("Expected a bolt", nameof(fastener));
+        
         if (!FastenersDatabase.BoltsDictionary.ContainsKey(bolt.Size))
         {
             Console.WriteLine("Bolt size not found or supported!");
             return 0;
         }
+
         
         BoltDimensions dim = FastenersDatabase.BoltsDictionary[bolt.Size];
         

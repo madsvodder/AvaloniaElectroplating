@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mv="clr-namespace:AvaloniaElectroplating.ViewModels"
+             xmlns:lucideAvalonia="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="mv:AboutPageViewModel"
+             x:Class="AvaloniaElectroplating.Views.AboutPageView">
+    <Grid RowDefinitions="Auto, Auto, Auto, *">
+        <!-- Content -->
+        <TextBlock Grid.Row="0">Version 0.01</TextBlock>
+        <Button Grid.Row="1">Check for updates</Button>
+        <CheckBox Grid.Row="2" >Check for updates on startup?</CheckBox>
+        
+        <!-- Back button -->
+        <Border Grid.Row="3" CornerRadius="15" BoxShadow="0 4 12 0 #40000000"  Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+            <Button Command="{Binding NavigateBackCommand}" Margin="5" Background="Transparent">
+                <lucideAvalonia:Lucide Icon="ArrowLeft"/>
+            </Button>
+        </Border>
+    </Grid>
+</UserControl>

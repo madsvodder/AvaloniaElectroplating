@@ -41,6 +41,7 @@ public partial class MainViewModel : ViewModelBase, IRecipient<NavigateToMessage
         {
             ApplicationPageNames.Calculate => _pageFactory.CreatePage(ApplicationPageNames.Calculate),
             ApplicationPageNames.Settings => _pageFactory.CreatePage(ApplicationPageNames.Settings),
+            ApplicationPageNames.About => _pageFactory.CreatePage(ApplicationPageNames.About),
             _ => throw new ArgumentOutOfRangeException(),
         };
     }

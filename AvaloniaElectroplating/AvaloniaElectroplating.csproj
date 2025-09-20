@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+        <ApplicationIcon>Assets/logo.ico</ApplicationIcon>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
@@ -24,5 +25,6 @@
         <PackageReference Include="LucideAvalonia" Version="1.6.1" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0-preview.7.25380.108" />
         <PackageReference Include="Semi.Avalonia" Version="11.2.1.9" />
+        <PackageReference Include="SukiUI" Version="6.0.4-nightly20250911" />
     </ItemGroup>
 </Project>

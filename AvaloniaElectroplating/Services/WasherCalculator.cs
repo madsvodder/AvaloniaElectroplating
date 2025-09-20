@@ -4,10 +4,14 @@ using AvaloniaElectroplating.Models;
 
 namespace AvaloniaElectroplating;
 
-public class WasherCalculator
+public class WasherCalculator : ICalculator
 {
-    public double CalculateSurfaceArea(Washer washer)
+    public double CalculateSurfaceArea(Fastener fastener)
     {
+        
+        if (fastener is not Washer washer)
+            throw new ArgumentException("Expected a washer", nameof(fastener));
+        
         if (!FastenersDatabase.WashersDictionary.ContainsKey(washer.Size))
         {
             Console.WriteLine("Washer size not found or supported!");

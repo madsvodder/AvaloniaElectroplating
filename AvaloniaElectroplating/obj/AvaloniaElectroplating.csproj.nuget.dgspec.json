@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj": {}
+    "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj": {}
   },
   "projects": {
-    "/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj": {
+    "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
+        "projectUniqueName": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
         "projectName": "AvaloniaElectroplating",
-        "projectPath": "/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
+        "projectPath": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
         "packagesPath": "/Users/madsvodder/.nuget/packages/",
-        "outputPath": "/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/",
+        "outputPath": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/madsvodder/.nuget/NuGet/NuGet.Config"
@@ -83,6 +83,10 @@
             "Semi.Avalonia": {
               "target": "Package",
               "version": "[11.2.1.9, )"
+            },
+            "SukiUI": {
+              "target": "Package",
+              "version": "[6.0.4-nightly20250911, )"
             }
           },
           "imports": [

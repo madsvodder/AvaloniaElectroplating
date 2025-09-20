@@ -78,3 +78,13 @@
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/refint/AvaloniaElectroplating.dll
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.pdb
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.Controls.DataGrid.dll
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/SukiUI.dll
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/System.Linq.Dynamic.Core.dll
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-loongarch64/native/libSkiaSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libSkiaSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libSkiaSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-loongarch64/native/libSkiaSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-riscv64/native/libSkiaSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-riscv64/native/libSkiaSharp.so
+/Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-x86/native/libSkiaSharp.so
