@@ -12,6 +12,6 @@
     </Application.DataTemplates>
   
     <Application.Styles>
-        <FluentTheme></FluentTheme>
+        <semi:SemiTheme></semi:SemiTheme>
     </Application.Styles>
 </Application>

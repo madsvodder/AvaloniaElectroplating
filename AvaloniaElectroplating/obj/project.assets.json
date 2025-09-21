@@ -548,7 +548,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Semi.Avalonia/11.2.1.9": {
+      "Semi.Avalonia/11.2.1.10": {
         "type": "package",
         "dependencies": {
           "Avalonia": "11.2.1"
@@ -1496,10 +1496,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Semi.Avalonia/11.2.1.9": {
-      "sha512": "dIxLkdrKC5V6QV0fIMfoRs/IcoGQ5qmbcG9GEvRlmbO80G243yrONlDU48Dl1F0Enn/sCfDwNTHW9GY1BtTAlw==",
+    "Semi.Avalonia/11.2.1.10": {
+      "sha512": "sEk9rMdjiaX1dJvrMgxkU7Nc2qBScFhfJf7pOgbn0rRbbmRF1lsW4ehZdjds/UMvelqkTUZvt6C93uWrOIJ4Hg==",
       "type": "package",
-      "path": "semi.avalonia/11.2.1.9",
+      "path": "semi.avalonia/11.2.1.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1508,7 +1508,7 @@
         "lib/net6.0/Semi.Avalonia.dll",
         "lib/net8.0/Semi.Avalonia.dll",
         "lib/netstandard2.0/Semi.Avalonia.dll",
-        "semi.avalonia.11.2.1.9.nupkg.sha512",
+        "semi.avalonia.11.2.1.10.nupkg.sha512",
         "semi.avalonia.nuspec"
       ]
     },
@@ -1818,24 +1818,24 @@
       "CommunityToolkit.Mvvm >= 8.4.0",
       "LucideAvalonia >= 1.6.1",
       "Microsoft.Extensions.DependencyInjection >= 10.0.0-preview.7.25380.108",
-      "Semi.Avalonia >= 11.2.1.9",
+      "Semi.Avalonia >= 11.2.1.10",
       "SukiUI >= 6.0.4-nightly20250911"
     ]
   },
   "packageFolders": {
-    "/home/mads/.nuget/packages/": {}
+    "/Users/madsvodder/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
+      "projectUniqueName": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
       "projectName": "AvaloniaElectroplating",
-      "projectPath": "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
-      "packagesPath": "/home/mads/.nuget/packages/",
-      "outputPath": "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/obj/",
+      "projectPath": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
+      "packagesPath": "/Users/madsvodder/.nuget/packages/",
+      "outputPath": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/mads/.nuget/NuGet/NuGet.Config"
+        "/Users/madsvodder/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -1859,7 +1859,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -1903,7 +1903,7 @@
           },
           "Semi.Avalonia": {
             "target": "Package",
-            "version": "[11.2.1.9, )"
+            "version": "[11.2.1.10, )"
           },
           "SukiUI": {
             "target": "Package",
@@ -1926,7 +1926,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/mads/.dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
