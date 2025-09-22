@@ -8,16 +8,15 @@
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
              x:Class="AvaloniaElectroplating.Views.CalculatePageView"
              x:DataType="vm:CalculatePageViewModel">
-    <Grid ColumnDefinitions="Auto, Auto, *, Auto" Margin="5">
+    <Grid ColumnDefinitions="0.3*, Auto, *, Auto">
         <!-- Sidebar -->
         <Grid Grid.Column="0" RowDefinitions="Auto, Auto" VerticalAlignment="Bottom">
             
             <!-- Timer -->
-            <ContentControl Width="200" Content="{Binding TimerPage}"></ContentControl>
+            <ContentControl Padding="20" Content="{Binding TimerPage}"></ContentControl>
 
             <!-- Settings and info -->
-            <Border Margin="5" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="0"  CornerRadius="20"
-                    BoxShadow="0 4 12 0 #40000000" Height="50">
+            <Border Margin="5" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="0">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Command="{Binding NavigateToSettingsCommand}" Background="Transparent">
                         <lucide:Lucide Icon="Settings"></lucide:Lucide>
@@ -39,7 +38,7 @@
             <Border
                 Background="#F3F4F6"
                 CornerRadius="10 10 10 10"
-                Margin="20 20 20 10"
+                Margin="20"
                 Padding="20"
                 BoxShadow="inset 0 0 2 0 DarkGray"
                 >
@@ -71,7 +70,7 @@
                     </StackPanel>
 
                     <!-- Plus button -->
-                        <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#3C82F6" Command="{Binding AddFastenerToListCommand}">+ Add</Button>
+                        <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Command="{Binding AddFastenerToListCommand}">+ Add</Button>
                         <Button Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Command="{Binding ClearFastenersCommand}">
                             - Clean
                         </Button>
@@ -81,8 +80,8 @@
             <!-- List -->
             <Border
                 Grid.Row="1"
-                CornerRadius="0 0 20 20"
-                Margin="10 10 20 20"
+                CornerRadius="10"
+                Margin="20 10 20 20"
                 >
                 <Grid RowDefinitions="15*, 3*">
                     <ScrollViewer IsScrollChainingEnabled="true" AllowAutoHide="false">
@@ -102,7 +101,10 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
                     </ScrollViewer>
-                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="32" Text="{Binding TotalString}">Result!</TextBlock>
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" Spacing="10">
+                        <TextBlock HorizontalAlignment="Center">You need:</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" FontSize="32" FontWeight="Bold" Text="{Binding TotalString}">Result!</TextBlock>
+                    </StackPanel>
                 </Grid>
             </Border>
         </Grid>

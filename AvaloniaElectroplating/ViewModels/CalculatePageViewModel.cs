@@ -171,7 +171,7 @@ public partial class CalculatePageViewModel : PageViewModel
 
             CurrentCalculator cc = new();
 
-            TotalString = $"You need: {cc.CalculateCurrent(count)}A";
+            TotalString = $"{cc.CalculateCurrent(count)}A";
         }
         else
         {
