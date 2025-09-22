@@ -7,8 +7,8 @@
              x:DataType="mv:TimerPageViewModel"
              x:Class="AvaloniaElectroplating.Views.TimerPageView">
     <Border CornerRadius="10"
-            Background="#F3F4F6"
             Padding="20"
+            BoxShadow="inset 0 0 2 0 DarkGray"
             >
         <Grid RowDefinitions="*, *" ColumnDefinitions="*, *" >
             <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top">Timer</TextBlock>

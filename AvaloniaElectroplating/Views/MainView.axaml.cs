@@ -2,12 +2,11 @@ using Avalonia.Controls;
 using AvaloniaElectroplating.Messages;
 using AvaloniaElectroplating.ViewModels;
 using CommunityToolkit.Mvvm.Messaging;
-using SukiUI.Controls;
 
 namespace AvaloniaElectroplating.Views;
 
 // In MainView.axaml.cs
-public partial class MainView : SukiWindow
+public partial class MainView : Window
 {
     public MainView()
     {
