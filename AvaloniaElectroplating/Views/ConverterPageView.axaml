@@ -1,0 +1,28 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaElectroplating.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+             x:DataType="vm:ConverterPageViewModel"
+             x:Class="AvaloniaElectroplating.Views.ConverterPageView">
+    <Border>
+        <Grid RowDefinitions="Auto, *, auto, *" ColumnDefinitions="*, *">
+            <TextBlock Grid.Row="0">Unit Converter</TextBlock>
+        
+            <!-- Top unit -->
+            <NumericUpDown ShowButtonSpinner="False" VerticalAlignment="Bottom" Background="Aqua" Grid.Column="0" Grid.Row="1" Value="{Binding Value}"></NumericUpDown>
+            <ComboBox VerticalAlignment="Bottom" Background="Red" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedFromUnit}">
+            </ComboBox>
+        
+            <!-- Arrow icon -->
+            <TextBlock FontSize="50" Grid.Column="1" Grid.Row="2">⬇️</TextBlock>
+        
+            <!-- Result unit -->
+            <TextBox VerticalAlignment="Top" Background="Aqua" Grid.Column="0" Grid.Row="3" Text="{Binding Result}"></TextBox>
+            <ComboBox VerticalAlignment="Top" Background="Red" Grid.Column="1" Grid.Row="3" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedToUnit}">
+            </ComboBox>
+        </Grid>
+    </Border>
+    
+</UserControl>

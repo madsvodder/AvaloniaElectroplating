@@ -20,8 +20,9 @@ public partial class CalculatePageViewModel : PageViewModel
 
     // Timer view model - CHANGE THIS SO IT COMES FROM THE FACTORY!?
     [ObservableProperty] private TimerPageViewModel _timerPage = new();
+    [ObservableProperty] private ConverterPageViewModel _converterPage = new();
     
-    [ObservableProperty] private List<FastenerType> _fastenerTypes;
+    [ObservableProperty] private List<FastenerType> _fastenerTypes = Enum.GetValues<FastenerType>().ToList();
     [ObservableProperty] private FastenerType _selectedFastenerType;
     [ObservableProperty] private FastenerSize? _selectedFastenerSize;
     [ObservableProperty] private double? _value;
@@ -32,9 +33,6 @@ public partial class CalculatePageViewModel : PageViewModel
     public CalculatePageViewModel()
     {
         PageName = ApplicationPageNames.Calculate;
-        
-        // Fill first combo box with fastener types
-        FastenerTypes = Enum.GetValues<FastenerType>().ToList();
         
         // Populates the list of sizes at the start
         OnSelectedFastenerTypeChanged(SelectedFastenerType);

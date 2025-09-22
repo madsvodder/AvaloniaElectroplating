@@ -11,13 +11,16 @@
              x:DataType="vm:CalculatePageViewModel">
     <Grid ColumnDefinitions="0.3*, Auto, *, Auto">
         <!-- Sidebar -->
-        <Grid Grid.Column="0" RowDefinitions="Auto, Auto" VerticalAlignment="Bottom">
+        <Grid Grid.Column="0" RowDefinitions="Auto, Auto, Auto" VerticalAlignment="Bottom">
             
             <!-- Timer -->
-            <ContentControl Padding="20" Content="{Binding TimerPage}"></ContentControl>
+            <ContentControl Grid.Row="0" Padding="20" Content="{Binding ConverterPage}"></ContentControl>
+            
+            <!-- Timer -->
+            <ContentControl Grid.Row="1" Padding="20" Content="{Binding TimerPage}"></ContentControl>
 
             <!-- Settings and info -->
-            <Border Margin="5" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="0">
+            <Border Margin="5" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="0">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Command="{Binding NavigateToSettingsCommand}" Background="Transparent">
                         <ic:FluentIcon Icon="Settings" ></ic:FluentIcon>
