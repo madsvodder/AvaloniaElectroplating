@@ -3,7 +3,7 @@
              x:Class="AvaloniaElectroplating.App"
              xmlns:local="using:AvaloniaElectroplating"
              xmlns:semi="https://irihi.tech/semi"
-             RequestedThemeVariant="Light">
+             RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>

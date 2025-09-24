@@ -11,22 +11,21 @@
              x:DataType="vm:CalculatePageViewModel">
     <Grid ColumnDefinitions="0.3*, Auto, *, Auto">
         <!-- Sidebar -->
-        <Grid Grid.Column="0" RowDefinitions="Auto, Auto, Auto" VerticalAlignment="Bottom">
-            
+        <Grid RowDefinitions="Auto, Auto, *, Auto">
+            <!-- Converter -->
+            <ContentControl Grid.Row="0" Padding="20" Content="{Binding ConverterPage}" />
+
             <!-- Timer -->
-            <ContentControl Grid.Row="0" Padding="20" Content="{Binding ConverterPage}"></ContentControl>
-            
-            <!-- Timer -->
-            <ContentControl Grid.Row="1" Padding="20" Content="{Binding TimerPage}"></ContentControl>
+            <ContentControl Grid.Row="1" Padding="20 0 20 20" Content="{Binding TimerPage}" />
 
             <!-- Settings and info -->
-            <Border Margin="5" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="0">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border Grid.Row="3" Margin="5">
+                <StackPanel Orientation="Horizontal">
                     <Button Command="{Binding NavigateToSettingsCommand}" Background="Transparent">
-                        <ic:FluentIcon Icon="Settings" ></ic:FluentIcon>
+                        <ic:FluentIcon Icon="Settings" />
                     </Button>
                     <Button Command="{Binding NavigateToAboutCommand}" Background="Transparent">
-                        <ic:FluentIcon Icon="Info"></ic:FluentIcon>
+                        <ic:FluentIcon Icon="Info" />
                     </Button>
                 </StackPanel>
             </Border>
@@ -49,12 +48,11 @@
 
                     <!-- Type -->
                     <StackPanel HorizontalAlignment="Stretch" Spacing="10">
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Type"></TextBlock>
-                        <ComboBox HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" SelectedItem="{Binding SelectedFastenerType}"
+                        <TextBlock Text="Type"></TextBlock>
+                        <ComboBox HorizontalAlignment="Stretch" SelectedItem="{Binding SelectedFastenerType}"
                                   ItemsSource="{Binding FastenerTypes}">
                         </ComboBox>
                     </StackPanel>
-
 
                     <!-- Metric size -->
                     <StackPanel Grid.Column="1" HorizontalAlignment="Stretch" Spacing="10">
@@ -65,11 +63,10 @@
                         </ComboBox>
                     </StackPanel>
 
-
                     <!-- Thread length -->
                     <StackPanel Grid.Column="2" HorizontalAlignment="Stretch" Spacing="10">
-                        <TextBlock Grid.Column="2" Text="Thread length (mm)"></TextBlock>
-                        <NumericUpDown HorizontalAlignment="Stretch" Grid.Column="2" Watermark="mm" Minimum="0" FormatString="0" Value="{Binding Value}"></NumericUpDown>
+                        <TextBlock Text="Thread length (mm)"></TextBlock>
+                        <NumericUpDown HorizontalAlignment="Stretch" Watermark="mm" Minimum="0" FormatString="0" Value="{Binding Value}"></NumericUpDown>
                     </StackPanel>
 
                     <!-- Plus button -->
@@ -85,6 +82,7 @@
                 Grid.Row="1"
                 CornerRadius="10"
                 Margin="20 10 20 20"
+                BoxShadow="inset 0 0 2 0 DarkGray"
                 >
                 <Grid RowDefinitions="15*, 3*">
                     <ScrollViewer IsScrollChainingEnabled="true" AllowAutoHide="false">
@@ -92,23 +90,31 @@
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" Spacing="10">
-                                        <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center" />
                                         <Button
                                             Command="{Binding #Root.((vm:CalculatePageViewModel)DataContext).RemoveFastenerCommand}"
-                                            CommandParameter="{Binding .}"
-                                            Grid.Column="1">
+                                            CommandParameter="{Binding .}">
                                             <lucide:Lucide Icon="Trash2"></lucide:Lucide>
                                         </Button>
+                                        <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
                     </ScrollViewer>
-                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" Spacing="10">
-                        <TextBlock HorizontalAlignment="Center">You need:</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" FontSize="32" FontWeight="Bold" Text="{Binding TotalString}">Result!</TextBlock>
-                    </StackPanel>
                 </Grid>
+            </Border>
+
+            <!-- Result -->
+            <Border
+                CornerRadius="10"
+                BoxShadow="inset 0 0 2 0 DarkGray"
+                Margin="20 10 20 20"
+                Padding="10"
+                Grid.Row="2">
+                <StackPanel>
+                    <TextBlock TextAlignment="Left" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Text="{Binding TotalCurrentString}">Result!</TextBlock>
+                    <TextBlock TextAlignment="Left" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Text="{Binding TotalAreaString}">Result!</TextBlock>
+                </StackPanel>
             </Border>
         </Grid>
     </Grid>

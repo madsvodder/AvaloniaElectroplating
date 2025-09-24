@@ -6,23 +6,27 @@
              mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
              x:DataType="vm:ConverterPageViewModel"
              x:Class="AvaloniaElectroplating.Views.ConverterPageView">
-    <Border>
-        <Grid RowDefinitions="Auto, *, auto, *" ColumnDefinitions="*, *">
+    <Border
+        CornerRadius="10"
+        Padding="20"
+        BoxShadow="inset 0 0 2 0 DarkGray">
+        <Grid RowDefinitions="Auto, *">
             <TextBlock Grid.Row="0">Unit Converter</TextBlock>
-        
-            <!-- Top unit -->
-            <NumericUpDown ShowButtonSpinner="False" Minimum="0" VerticalAlignment="Bottom" Background="Aqua" Grid.Column="0" Grid.Row="1" Value="{Binding Value}"></NumericUpDown>
-            <ComboBox VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedFromUnit}">
-            </ComboBox>
-        
-            <!-- Arrow icon -->
-            <TextBlock FontSize="50" Grid.Column="1" Grid.Row="2">⬇️</TextBlock>
-        
-            <!-- Result unit -->
-            <TextBox VerticalAlignment="Top" Grid.Column="0" Grid.Row="3" Text="{Binding Result}"></TextBox>
-            <ComboBox VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedToUnit}">
-            </ComboBox>
+
+            <Grid VerticalAlignment="Center" ColumnSpacing="10" Grid.Row="1" RowDefinitions="*, *, *" ColumnDefinitions="*, *">
+                <!-- Top unit -->
+                <NumericUpDown Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" ShowButtonSpinner="False" Minimum="0" Background="Aqua" Value="{Binding Value}"></NumericUpDown>
+                <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedFromUnit}">
+                </ComboBox>
+
+                <!-- Arrow icon -->
+                <TextBlock HorizontalAlignment="Right" Margin="0 20 0 0" Grid.Column="0" Grid.Row="1" FontSize="34" Foreground="DarkGray">⬇️</TextBlock>
+
+                <!-- Result unit -->
+                <TextBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Text="{Binding Result}"></TextBox>
+                <ComboBox Grid.Column="1" Grid.Row="2" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedToUnit}">
+                </ComboBox>
+            </Grid>
         </Grid>
     </Border>
-    
 </UserControl>

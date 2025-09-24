@@ -23,7 +23,6 @@ public partial class ConverterPageViewModel : ViewModelBase
     [RelayCommand]
     private void Convert()
     {
-
         try
         {
             Console.WriteLine($"Converting from: {SelectedFromUnit} to: {SelectedToUnit}");

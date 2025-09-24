@@ -26,7 +26,9 @@ public partial class CalculatePageViewModel : PageViewModel
     [ObservableProperty] private FastenerType _selectedFastenerType;
     [ObservableProperty] private FastenerSize? _selectedFastenerSize;
     [ObservableProperty] private double? _value;
-    [ObservableProperty] private string _totalString = "";
+    [ObservableProperty] private string _totalCurrentString = "";
+    [ObservableProperty] private string _totalAreaString = "";
+
     public ObservableCollection<FastenerSize> AvailableSizes { set; get; } = new(); 
     public ObservableCollection<Fastener> FastenersToCalc { get; } = new();
     
@@ -135,7 +137,8 @@ public partial class CalculatePageViewModel : PageViewModel
     private void CalculateAll()
     {
         // Reset total string
-        TotalString = "";
+        TotalCurrentString = "";
+        TotalAreaString = "";
         
         if (FastenersToCalc.Count > 0)
         {
@@ -168,8 +171,11 @@ public partial class CalculatePageViewModel : PageViewModel
             }
 
             CurrentCalculator cc = new();
+            double currentNeeded = cc.CalculateCurrent(count);
+            double roundedSurfaceArea = Math.Round(count, 0);
 
-            TotalString = $"{cc.CalculateCurrent(count)}A";
+            TotalCurrentString = $"⚡ Current needed: {currentNeeded} A";
+            TotalAreaString = $"📐 Surface area: {roundedSurfaceArea} mm2";
         }
         else
         {
