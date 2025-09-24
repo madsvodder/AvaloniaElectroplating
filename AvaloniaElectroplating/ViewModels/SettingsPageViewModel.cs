@@ -17,6 +17,4 @@ public partial class SettingsPageViewModel : PageViewModel
     {
         WeakReferenceMessenger.Default.Send(new NavigateToMessage(ApplicationPageNames.Calculate));
     }
-    
-    
 }

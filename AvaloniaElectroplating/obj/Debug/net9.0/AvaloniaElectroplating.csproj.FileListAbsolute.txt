@@ -168,16 +168,6 @@
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-riscv64/native/libSkiaSharp.so
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-riscv64/native/libSkiaSharp.so
 /Users/madsvodder/Development/RiderProjects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-x86/native/libSkiaSharp.so
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/Avalonia.Controls.DataGrid.dll
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/SukiUI.dll
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/System.Linq.Dynamic.Core.dll
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-loongarch64/native/libSkiaSharp.so
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libSkiaSharp.so
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libSkiaSharp.so
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-loongarch64/native/libSkiaSharp.so
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-musl-riscv64/native/libSkiaSharp.so
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-riscv64/native/libSkiaSharp.so
-/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/runtimes/linux-x86/native/libSkiaSharp.so
 /Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/AvaloniaElectroplating
 /Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/AvaloniaElectroplating.deps.json
 /Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/AvaloniaElectroplating.runtimeconfig.json
@@ -342,3 +332,5 @@ C:/Users/Mads/Documents/Development/VSCode-Projects/ElectroplatingAvalonia/Avalo
 C:/Users/Mads/Documents/Development/VSCode-Projects/ElectroplatingAvalonia/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.pdb
 C:/Users/Mads/Documents/Development/VSCode-Projects/ElectroplatingAvalonia/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/AvaloniaElectroplating.genruntimeconfig.cache
 C:/Users/Mads/Documents/Development/VSCode-Projects/ElectroplatingAvalonia/AvaloniaElectroplating/AvaloniaElectroplating/obj/Debug/net9.0/ref/AvaloniaElectroplating.dll
+/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/FluentIcons.Avalonia.dll
+/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/bin/Debug/net9.0/FluentIcons.Common.dll

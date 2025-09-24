@@ -4,6 +4,7 @@ using AvaloniaElectroplating.Enums;
 using AvaloniaElectroplating.Factories;
 using AvaloniaElectroplating.Messages;
 using AvaloniaElectroplating.Models;
+using AvaloniaElectroplating.Services;
 using AvaloniaElectroplating.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -17,17 +18,28 @@ public partial class MainViewModel : ViewModelBase, IRecipient<NavigateToMessage
     [ObservableProperty]
     private PageViewModel? _currentPage;
 
-    private PageFactory _pageFactory;
+    private readonly PageFactory _pageFactory;
+
+    private UserSettingsService _settingsService;
     
     // Constructor for live design
     public MainViewModel(){}
-    public MainViewModel(PageFactory pageFactory)
+    public MainViewModel(PageFactory pageFactory,  UserSettingsService settingsService)
     {
         _pageFactory = pageFactory;
+
+        _settingsService = settingsService;
         
         WeakReferenceMessenger.Default.Register<NavigateToMessage>(this);
         
         NavigateTo(ApplicationPageNames.Calculate);
+
+        CustomInitialize();
+    }
+
+    private async Task CustomInitialize()
+    {
+        await _settingsService.LoadSettingsFromJson();
     }
 
     public void Receive(NavigateToMessage message)
