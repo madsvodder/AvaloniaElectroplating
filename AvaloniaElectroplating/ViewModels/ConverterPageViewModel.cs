@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AvaloniaElectroplating.Enums;
 using AvaloniaElectroplating.Models;
+using AvaloniaElectroplating.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -22,6 +23,7 @@ public partial class ConverterPageViewModel : ViewModelBase
     [RelayCommand]
     private void Convert()
     {
+
         try
         {
             Console.WriteLine($"Converting from: {SelectedFromUnit} to: {SelectedToUnit}");

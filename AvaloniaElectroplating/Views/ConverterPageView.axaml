@@ -11,16 +11,16 @@
             <TextBlock Grid.Row="0">Unit Converter</TextBlock>
         
             <!-- Top unit -->
-            <NumericUpDown ShowButtonSpinner="False" VerticalAlignment="Bottom" Background="Aqua" Grid.Column="0" Grid.Row="1" Value="{Binding Value}"></NumericUpDown>
-            <ComboBox VerticalAlignment="Bottom" Background="Red" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedFromUnit}">
+            <NumericUpDown ShowButtonSpinner="False" Minimum="0" VerticalAlignment="Bottom" Background="Aqua" Grid.Column="0" Grid.Row="1" Value="{Binding Value}"></NumericUpDown>
+            <ComboBox VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedFromUnit}">
             </ComboBox>
         
             <!-- Arrow icon -->
             <TextBlock FontSize="50" Grid.Column="1" Grid.Row="2">⬇️</TextBlock>
         
             <!-- Result unit -->
-            <TextBox VerticalAlignment="Top" Background="Aqua" Grid.Column="0" Grid.Row="3" Text="{Binding Result}"></TextBox>
-            <ComboBox VerticalAlignment="Top" Background="Red" Grid.Column="1" Grid.Row="3" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedToUnit}">
+            <TextBox VerticalAlignment="Top" Grid.Column="0" Grid.Row="3" Text="{Binding Result}"></TextBox>
+            <ComboBox VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" ItemsSource="{Binding UnitsList}" SelectedValue="{Binding SelectedToUnit}">
             </ComboBox>
         </Grid>
     </Border>
