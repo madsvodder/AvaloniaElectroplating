@@ -6,6 +6,7 @@ using AvaloniaElectroplating.Enums;
 using AvaloniaElectroplating.Factories;
 using AvaloniaElectroplating.Messages;
 using AvaloniaElectroplating.Models;
+using AvaloniaElectroplating.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
@@ -17,6 +18,9 @@ public partial class CalculatePageViewModel : PageViewModel
     // Calculator classes - Change to dependency injection?
     private CalculatorFactory _calculatorFactory = new();
     private FastenerFactory _fc = new();
+    
+    // User settings
+    private UserSettingsService _settingsService;
 
     // Timer view model - CHANGE THIS SO IT COMES FROM THE FACTORY!?
     [ObservableProperty] private TimerPageViewModel _timerPage = new();
@@ -32,12 +36,15 @@ public partial class CalculatePageViewModel : PageViewModel
     public ObservableCollection<FastenerSize> AvailableSizes { set; get; } = new(); 
     public ObservableCollection<Fastener> FastenersToCalc { get; } = new();
     
-    public CalculatePageViewModel()
+    public CalculatePageViewModel(UserSettingsService userSettingsService)
     {
         PageName = ApplicationPageNames.Calculate;
         
         // Populates the list of sizes at the start
         OnSelectedFastenerTypeChanged(SelectedFastenerType);
+        
+        // User settings service
+        _settingsService = userSettingsService;
     }
 
     [RelayCommand]
@@ -171,7 +178,9 @@ public partial class CalculatePageViewModel : PageViewModel
             }
 
             CurrentCalculator cc = new();
-            double currentNeeded = cc.CalculateCurrent(count);
+            
+            // Times with the user settings multiplier
+            double currentNeeded = Math.Round(cc.CalculateCurrent(count) * _settingsService.Settings.FinalCurrentMultiplier, 3);
             double roundedSurfaceArea = Math.Round(count, 0);
 
             TotalCurrentString = $"⚡ Current needed: {currentNeeded} A";

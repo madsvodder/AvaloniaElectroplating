@@ -7,11 +7,17 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="mv:SettingsPageViewModel"
              x:Class="AvaloniaElectroplating.Views.SettingsPageView">
-    <Grid RowDefinitions="*, Auto, Auto">
+    <Grid RowDefinitions="*, *, Auto">
         <!-- Content -->
         <TextBlock Grid.Row="0">Welcome to the empty settings page!</TextBlock>
 
-
+        <Grid Grid.Row="1" ColumnDefinitions="Auto, Auto" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBlock Grid.Column="0" 
+                       ToolTip.Tip="Scales down the final calculated current to improve plating quality.
+                                    Use this if the parts darken or turn black at the recommended current.
+                                    For example, setting this to 0.9 applies 90% of the calculated current.">Final Current multiplier</TextBlock>
+            <NumericUpDown Grid.Column="1" Minimum="0.5" Maximum="1.5" Increment="0.05" MinWidth="80" Value="{Binding CurrentMultiplier}"></NumericUpDown>
+        </Grid>
         
         <!-- Back button -->
         <Border Grid.Row="2" CornerRadius="15" BoxShadow="0 4 12 0 #40000000"  Width="50" Height="50" HorizontalAlignment="Left" Margin="10">
