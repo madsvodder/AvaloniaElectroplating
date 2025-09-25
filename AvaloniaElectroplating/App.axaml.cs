@@ -29,8 +29,14 @@ public partial class App : Application
             // Dependency injection
             ServiceCollection collection = new();
             collection.AddSingleton<PageFactory>();
-            collection.AddSingleton<MainViewModel>();
             collection.AddSingleton<UserSettingsService>();
+
+            collection.AddSingleton<MainViewModel>();
+
+            collection.AddSingleton<CalculatePageViewModel>();
+            collection.AddTransient<SettingsPageViewModel>();
+            collection.AddTransient<AboutPageViewModel>();
+
             var services = collection.BuildServiceProvider();
 
             var splashScreenVm = new SplashScreenViewModel();

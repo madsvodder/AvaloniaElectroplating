@@ -10,7 +10,7 @@ namespace AvaloniaElectroplating.Services;
 public class UserSettingsService
 {
 
-    private UserSettings _settings = new();
+    public UserSettings Settings { get; private set; } = new();
 
     public async Task SaveSettingsAsJson()
     {
@@ -22,7 +22,7 @@ public class UserSettingsService
             WriteIndented = true
         };
 
-        string jsonString = JsonSerializer.Serialize<UserSettings>(_settings, options);
+        var jsonString = JsonSerializer.Serialize<UserSettings>(Settings, options);
 
         await File.WriteAllTextAsync("settings.json", jsonString);
 
@@ -41,7 +41,7 @@ public class UserSettingsService
         {
             Console.WriteLine("Loading settings...");
             var settingsJson = await File.ReadAllTextAsync("settings.json");
-            _settings = JsonSerializer.Deserialize<UserSettings>(settingsJson);
+            Settings = JsonSerializer.Deserialize<UserSettings>(settingsJson);
         }
         else
         {

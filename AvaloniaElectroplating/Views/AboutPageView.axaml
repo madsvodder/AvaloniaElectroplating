@@ -11,7 +11,7 @@
         <!-- Content -->
         <TextBlock Grid.Row="0">Version 0.01</TextBlock>
         <Button Grid.Row="1">Check for updates</Button>
-        <CheckBox Grid.Row="2" >Check for updates on startup?</CheckBox>
+        <CheckBox  Grid.Row="2" IsChecked="{Binding CheckForUpdatesOnStartup}">Check for updates on startup?</CheckBox>
         
         <!-- Back button -->
         <Border Grid.Row="3" CornerRadius="15" BoxShadow="0 4 12 0 #40000000"  Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">

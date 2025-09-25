@@ -7,12 +7,14 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="mv:SettingsPageViewModel"
              x:Class="AvaloniaElectroplating.Views.SettingsPageView">
-    <Grid RowDefinitions="*, Auto">
+    <Grid RowDefinitions="*, Auto, Auto">
         <!-- Content -->
         <TextBlock Grid.Row="0">Welcome to the empty settings page!</TextBlock>
+
+
         
         <!-- Back button -->
-        <Border Grid.Row="1" CornerRadius="15" BoxShadow="0 4 12 0 #40000000"  Width="50" Height="50" HorizontalAlignment="Left" Margin="10">
+        <Border Grid.Row="2" CornerRadius="15" BoxShadow="0 4 12 0 #40000000"  Width="50" Height="50" HorizontalAlignment="Left" Margin="10">
             <Button Command="{Binding NavigateBackCommand}" Margin="5" Background="Transparent">
                 <lucideAvalonia:Lucide Icon="ArrowLeft"/>
             </Button>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj": {}
+    "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj": {}
   },
   "projects": {
-    "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj": {
+    "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
+        "projectUniqueName": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
         "projectName": "AvaloniaElectroplating",
-        "projectPath": "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
-        "packagesPath": "/home/mads/.nuget/packages/",
-        "outputPath": "/home/mads/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/obj/",
+        "projectPath": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/AvaloniaElectroplating.csproj",
+        "packagesPath": "/Users/madsvodder/.nuget/packages/",
+        "outputPath": "/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/mads/.nuget/NuGet/NuGet.Config"
+          "/Users/madsvodder/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -105,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/mads/.dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
