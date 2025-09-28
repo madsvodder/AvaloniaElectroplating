@@ -6,7 +6,12 @@ public class Nut : Fastener
 {
     public Nut(FastenerSize size)
     {
-        Type = FastenerType.Nut;
+        FastenerType = FastenerType.Nut;
         Size = size;
+    }
+
+    public override string ToString()
+    {
+        return string.Format("{0} {1}", Type, Size);
     }
 }

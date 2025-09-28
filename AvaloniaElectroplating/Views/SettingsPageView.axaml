@@ -4,25 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mv="clr-namespace:AvaloniaElectroplating.ViewModels"
              xmlns:lucideAvalonia="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
+             xmlns:ic="clr-namespace:FluentIcons.Avalonia;assembly=FluentIcons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="mv:SettingsPageViewModel"
              x:Class="AvaloniaElectroplating.Views.SettingsPageView">
-    <Grid RowDefinitions="*, *, Auto">
+    <Grid RowDefinitions="*, *, Auto" Margin="20">
         <!-- Content -->
-        <TextBlock Grid.Row="0">Welcome to the empty settings page!</TextBlock>
-
-        <Grid Grid.Row="1" ColumnDefinitions="Auto, Auto" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <TextBlock Grid.Column="0" 
-                       ToolTip.Tip="Scales down the final calculated current to improve plating quality.
-                                    Use this if the parts darken or turn black at the recommended current.
-                                    For example, setting this to 0.9 applies 90% of the calculated current.">Final Current multiplier</TextBlock>
-            <NumericUpDown Grid.Column="1" Minimum="0.5" Maximum="1.5" Increment="0.05" MinWidth="80" Value="{Binding CurrentMultiplier}"></NumericUpDown>
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, Auto" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="10">
+                <TextBlock VerticalAlignment="Center">Current Density (mA/in²)</TextBlock>
+                <ic:FluentIcon VerticalAlignment="Center" Icon="QuestionCircle" ToolTip.Tip="Sets the plating current density in milliamps per square inch (mA/in²).
+                                    This value controls the quality of the plating.
+                                    Too high → parts may burn or turn black.
+                                    Too low → plating may be dull or slow."></ic:FluentIcon>
+                <NumericUpDown VerticalAlignment="Top" Minimum="0.5" Maximum="1.5" Increment="0.05" MinWidth="80" Value="{Binding CurrentDensity}"></NumericUpDown>
+            </StackPanel>
         </Grid>
         
         <!-- Back button -->
-        <Border Grid.Row="2" CornerRadius="15" BoxShadow="0 4 12 0 #40000000"  Width="50" Height="50" HorizontalAlignment="Left" Margin="10">
+        <Border Grid.Row="2" Width="50" Height="50" HorizontalAlignment="Left" Margin="10">
             <Button Command="{Binding NavigateBackCommand}" Margin="5" Background="Transparent">
-                <lucideAvalonia:Lucide Icon="ArrowLeft"/>
+                <ic:FluentIcon Icon="ArrowLeft" />
             </Button>
         </Border>
     </Grid>

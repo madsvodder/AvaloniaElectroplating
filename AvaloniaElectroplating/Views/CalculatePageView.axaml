@@ -86,7 +86,7 @@
                 >
                 <Grid RowDefinitions="15*, 3*">
                     <ScrollViewer IsScrollChainingEnabled="true" AllowAutoHide="false">
-                        <ListBox ItemsSource="{Binding FastenersToCalc}" Background="Transparent">
+                        <ListBox ItemsSource="{Binding AllItemsToCalc}" Background="Transparent">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" Spacing="10">
@@ -95,7 +95,7 @@
                                             CommandParameter="{Binding .}">
                                             <lucide:Lucide Icon="Trash2"></lucide:Lucide>
                                         </Button>
-                                        <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center" />
+                                        <TextBlock Text="{Binding .}" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>

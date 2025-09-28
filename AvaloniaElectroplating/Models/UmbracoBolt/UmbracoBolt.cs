@@ -8,8 +8,13 @@ public class UmbracoBolt : Fastener
 
     public UmbracoBolt(FastenerSize size, double threadLength)
     {
-        Type = FastenerType.UmbracoBolt;
+        FastenerType = FastenerType.UmbracoBolt;
         Size = size;
         ThreadLength = threadLength;
+    }
+
+    public override string ToString()
+    {
+        return string.Format("{0} {1} {2}{3}", Type, Size, ThreadLength, "mm");
     }
 }

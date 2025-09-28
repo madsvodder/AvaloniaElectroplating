@@ -4,5 +4,5 @@ namespace AvaloniaElectroplating;
 
 public interface ICalculator
 {
-    double CalculateSurfaceArea(Fastener fastener);
+    double CalculateSurfaceArea(Fastener model);
 }

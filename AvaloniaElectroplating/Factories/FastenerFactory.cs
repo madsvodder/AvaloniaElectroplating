@@ -28,9 +28,7 @@ public class FastenerFactory
     {
         try
         {
-            var b = new Bolt(selectedFastenerSize, value);
-            b.DisplayName = string.Format("{0} {1} {2}{3}", b.Type, b.Size, b.ThreadLength, "mm");
-            return b;
+            return new Bolt(selectedFastenerSize, value);
         }
         catch (Exception e)
         {
@@ -43,9 +41,7 @@ public class FastenerFactory
     {
         try
         {
-            var b = new UmbracoBolt(selectedFastenerSize, value);
-            b.DisplayName = string.Format("{0} {1} {2}{3}", b.Type, b.Size, b.ThreadLength, "mm");
-            return b;
+            return new UmbracoBolt(selectedFastenerSize, value);
         }
         catch (Exception e)
         {
@@ -58,9 +54,7 @@ public class FastenerFactory
     {
         try
         {
-            var b = new Washer(selectedFastenerSize);
-            b.DisplayName = string.Format("{0} {1}", b.Type, b.Size);
-            return b;
+            return new Washer(selectedFastenerSize);
         }
         catch
         {
@@ -73,9 +67,7 @@ public class FastenerFactory
     {
         try
         {
-            var b = new Nut(selectedFastenerSize);
-            b.DisplayName = string.Format("{0} {1}", b.Type, b.Size);
-            return b;
+            return new Nut(selectedFastenerSize);
         }
         catch
         {

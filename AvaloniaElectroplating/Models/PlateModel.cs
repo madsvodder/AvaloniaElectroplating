@@ -2,20 +2,20 @@ using AvaloniaElectroplating.Enums;
 
 namespace AvaloniaElectroplating.Models;
 
-public abstract class Fastener : ICalculable
+public class PlateModel : ICalculable
 {
-    public FastenerSize Size { get; set; }
-    public FastenerType FastenerType { get; set; }
+    // Surface area in Mm2
     public double SurfaceArea { get; set; }
     public ModelType Type { get; set; }
 
-    public Fastener()
+    public PlateModel(double surfaceArea)
     {
-        Type = ModelType.Fastener;
+        SurfaceArea = surfaceArea;
+        Type = ModelType.Custom;
     }
 
     public override string ToString()
     {
-        return $"Fastener type?";
+        return $"Custom model - {SurfaceArea}mm2";
     }
 }

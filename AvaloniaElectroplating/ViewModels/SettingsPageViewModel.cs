@@ -14,7 +14,7 @@ public partial class SettingsPageViewModel : PageViewModel
     private UserSettingsService _settingsService;
     
     // Settings properties
-    [ObservableProperty] private double _currentMultiplier;
+    [ObservableProperty] private double _currentDensity;
     public SettingsPageViewModel(UserSettingsService userSettingsService)
     {
         PageName = ApplicationPageNames.Settings;
@@ -33,11 +33,11 @@ public partial class SettingsPageViewModel : PageViewModel
 
     private void SetUiToUserSettings()
     {
-        CurrentMultiplier = _settingsService.Settings.FinalCurrentMultiplier;
+        CurrentDensity = _settingsService.Settings.CurrentDensity;
     }
     
     private void SetUserSettingsFromUi()
     {
-        _settingsService.Settings.FinalCurrentMultiplier = CurrentMultiplier;
+        _settingsService.Settings.CurrentDensity = CurrentDensity;
     }
 }
