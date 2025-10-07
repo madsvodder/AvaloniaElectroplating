@@ -11,15 +11,19 @@
              x:DataType="vm:CalculatePageViewModel">
     <Grid ColumnDefinitions="0.3*, Auto, *, Auto">
         <!-- Sidebar -->
-        <Grid RowDefinitions="Auto, Auto, *, Auto">
+        <Grid RowDefinitions="Auto, Auto, Auto, *, Auto">
+
+            <!-- Custom quick calculator -->
+            <ContentControl Grid.Row="0" Padding="20" Content="{Binding CustomCalcPage}" />
+
             <!-- Converter -->
-            <ContentControl Grid.Row="0" Padding="20" Content="{Binding ConverterPage}" />
+            <ContentControl Grid.Row="1" Padding="20 0 20 20" Content="{Binding ConverterPage}" />
 
             <!-- Timer -->
-            <ContentControl Grid.Row="1" Padding="20 0 20 20" Content="{Binding TimerPage}" />
+            <ContentControl Grid.Row="2" Padding="20 0 20 20" Content="{Binding TimerPage}" />
 
             <!-- Settings and info -->
-            <Border Grid.Row="3" Margin="5">
+            <Border Grid.Row="4" Margin="5">
                 <StackPanel Orientation="Horizontal">
                     <Button Command="{Binding NavigateToSettingsCommand}" Background="Transparent">
                         <ic:FluentIcon Icon="Settings" />
@@ -44,10 +48,19 @@
                 Padding="20"
                 BoxShadow="inset 0 0 2 0 DarkGray"
                 >
-                <Grid ColumnDefinitions="*, *, *, *, *" ColumnSpacing="10">
+                <Grid ColumnDefinitions="*, *, *, *, *, *" ColumnSpacing="10">
 
-                    <!-- Type -->
+                    <!-- Base Type
                     <StackPanel HorizontalAlignment="Stretch" Spacing="10">
+                        <TextBlock Text="Type"></TextBlock>
+                        <ComboBox HorizontalAlignment="Stretch" SelectedItem="{Binding SelectedModelType}"
+                                  ItemsSource="{Binding ModelTypes}">
+                        </ComboBox>
+                    </StackPanel>
+                    -->
+
+                    <!-- Fastener Type -->
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" Spacing="10">
                         <TextBlock Text="Type"></TextBlock>
                         <ComboBox HorizontalAlignment="Stretch" SelectedItem="{Binding SelectedFastenerType}"
                                   ItemsSource="{Binding FastenerTypes}">
@@ -65,7 +78,7 @@
 
                     <!-- Thread length -->
                     <StackPanel Grid.Column="2" HorizontalAlignment="Stretch" Spacing="10">
-                        <TextBlock Text="Thread length (mm)"></TextBlock>
+                        <TextBlock Text="Thread length"></TextBlock>
                         <NumericUpDown HorizontalAlignment="Stretch" Watermark="mm" Minimum="0" FormatString="0" Value="{Binding Value}"></NumericUpDown>
                     </StackPanel>
 

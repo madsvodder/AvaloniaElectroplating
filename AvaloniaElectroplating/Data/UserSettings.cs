@@ -5,6 +5,6 @@ namespace AvaloniaElectroplating.Models;
 
 public class UserSettings
 {
-    public double CurrentDensity { get; set; } = 0.9;
+    public double CurrentDensity { get; set; } = 0.08;
     public bool CheckForUpdatesOnStartup { get; set; } = true;
 }

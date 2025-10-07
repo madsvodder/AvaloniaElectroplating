@@ -21,14 +21,24 @@ public partial class CalculatePageViewModel : PageViewModel
     // User settings
     private UserSettingsService _settingsService;
 
-    // Timer view model - CHANGE THIS SO IT COMES FROM THE FACTORY!?
+    // Viewmodels for wigets on left side - CHANGE THIS SO IT COMES FROM THE FACTORY!?
     [ObservableProperty] private TimerPageViewModel _timerPage = new();
     [ObservableProperty] private ConverterPageViewModel _converterPage = new();
+    [ObservableProperty] private CustomCalcViewModel _customCalcPage = new();
 
     [ObservableProperty] private List<FastenerType> _fastenerTypes = Enum.GetValues<FastenerType>().ToList();
+
+    [ObservableProperty] private List<ModelType> _modelTypes = Enum.GetValues<ModelType>().ToList();
+    [ObservableProperty] private ModelType _selectedModelType;
+
+
     [ObservableProperty] private FastenerType _selectedFastenerType;
     [ObservableProperty] private FastenerSize? _selectedFastenerSize;
+
+    // Value variable is used for different things. Could be thread length or mm2 for custom models.
     [ObservableProperty] private double? _value;
+
+    // Result strings
     [ObservableProperty] private string _totalCurrentString = "";
     [ObservableProperty] private string _totalAreaString = "";
 
@@ -60,7 +70,7 @@ public partial class CalculatePageViewModel : PageViewModel
         WeakReferenceMessenger.Default.Send(new NavigateToMessage(ApplicationPageNames.About));
     }
 
-    // REMOVED FASTENER FACTORY
+    // REMOVED FASTENER FACTORY - create the fasteners here instead.
     [RelayCommand]
     private void AddFastenerToList()
     {
@@ -72,7 +82,7 @@ public partial class CalculatePageViewModel : PageViewModel
                 FastenerType.UmbracoBolt when Value.HasValue => new UmbracoBolt(SelectedFastenerSize.Value, Value.Value),
                 FastenerType.Nut => new Nut(SelectedFastenerSize.Value),
                 FastenerType.Washer => new Washer(SelectedFastenerSize.Value),
-                FastenerType.CustomMm2 when Value.HasValue => new PlateModel(Value.Value),
+                //FastenerType.CustomMm2 when Value.HasValue => new PlateModel(Value.Value),
                 _ => null
             };
 

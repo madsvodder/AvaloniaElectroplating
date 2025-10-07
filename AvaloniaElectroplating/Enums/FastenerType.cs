@@ -6,5 +6,4 @@ public enum FastenerType
     UmbracoBolt,
     Nut,
     Washer,
-    CustomMm2,
 }

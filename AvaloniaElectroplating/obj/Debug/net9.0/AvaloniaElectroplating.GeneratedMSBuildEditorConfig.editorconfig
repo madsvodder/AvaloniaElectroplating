@@ -38,6 +38,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/ConverterPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/CustomCalcView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/MainView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

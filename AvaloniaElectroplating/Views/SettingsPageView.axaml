@@ -17,7 +17,8 @@
                                     This value controls the quality of the plating.
                                     Too high → parts may burn or turn black.
                                     Too low → plating may be dull or slow."></ic:FluentIcon>
-                <NumericUpDown VerticalAlignment="Top" Minimum="0.5" Maximum="1.5" Increment="0.05" MinWidth="80" Value="{Binding CurrentDensity}"></NumericUpDown>
+                <NumericUpDown VerticalAlignment="Top" Minimum="0.01" Maximum="1.0" Increment="0.01" MinWidth="80" Value="{Binding CurrentDensity}"></NumericUpDown>
+                <TextBlock VerticalAlignment="Center">Requirest restart!</TextBlock>
             </StackPanel>
         </Grid>
         
