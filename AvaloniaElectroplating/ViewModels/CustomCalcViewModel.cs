@@ -1,3 +1,4 @@
+using System;
 using AvaloniaElectroplating.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 
@@ -8,7 +9,7 @@ public partial class CustomCalcViewModel : ViewModelBase
 
     private readonly CurrentCalculator _currentCalculator;
 
-    [ObservableProperty] private double _mm2Value;
+    [ObservableProperty] private double? _mm2Value;
 
     [ObservableProperty] private string _resultString = "";
 
@@ -17,9 +18,16 @@ public partial class CustomCalcViewModel : ViewModelBase
         _currentCalculator = currentCalculator;
     }
 
-    partial void OnMm2ValueChanged(double value)
+    partial void OnMm2ValueChanged(double? value)
     {
-        var result = _currentCalculator.CalculateCurrent(value);
-        ResultString = $"{result} mA needed";
+        try
+        {
+            var result = _currentCalculator.CalculateCurrent(value.Value);
+            ResultString = $"{result} mA needed";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 }

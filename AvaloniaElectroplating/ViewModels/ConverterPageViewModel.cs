@@ -14,19 +14,20 @@ public partial class ConverterPageViewModel : ViewModelBase
 
     [ObservableProperty] private List<Units> _unitsList = Enum.GetValues<Units>().ToList();
 
-    [ObservableProperty] private double _value;
+    [ObservableProperty] private double? _value = 0;
     [ObservableProperty] private double _result;
 
     [ObservableProperty] private Units _selectedFromUnit = Units.inches;
     [ObservableProperty] private Units _selectedToUnit = Units.mm;
-    
+
     [RelayCommand]
     private void Convert()
     {
+
         try
         {
             Console.WriteLine($"Converting from: {SelectedFromUnit} to: {SelectedToUnit}");
-            Result = UnitConverter.Convert(Value, SelectedFromUnit, SelectedToUnit);
+            Result = UnitConverter.Convert(Value.Value, SelectedFromUnit, SelectedToUnit);
         }
         catch (Exception e)
         {
@@ -34,7 +35,7 @@ public partial class ConverterPageViewModel : ViewModelBase
         }
     }
 
-    partial void OnValueChanged(double oldValue, double newValue)
+    partial void OnValueChanged(double? oldValue, double? newValue)
     {
         Convert();
     }

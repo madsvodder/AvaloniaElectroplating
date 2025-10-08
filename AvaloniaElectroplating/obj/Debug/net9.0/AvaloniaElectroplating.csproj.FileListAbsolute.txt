@@ -498,3 +498,4 @@ C:\Users\Mads\Documents\GitHub\AvaloniaElectroplating\AvaloniaElectroplating\obj
 C:\Users\Mads\Documents\GitHub\AvaloniaElectroplating\AvaloniaElectroplating\obj\Debug\net9.0\AvaloniaElectroplating.pdb
 C:\Users\Mads\Documents\GitHub\AvaloniaElectroplating\AvaloniaElectroplating\obj\Debug\net9.0\AvaloniaElectroplating.genruntimeconfig.cache
 C:\Users\Mads\Documents\GitHub\AvaloniaElectroplating\AvaloniaElectroplating\obj\Debug\net9.0\ref\AvaloniaElectroplating.dll
+C:\Users\Mads\Documents\GitHub\AvaloniaElectroplating\AvaloniaElectroplating\bin\Debug\net9.0\version.json

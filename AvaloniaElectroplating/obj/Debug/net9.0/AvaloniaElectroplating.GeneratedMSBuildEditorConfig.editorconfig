@@ -29,6 +29,9 @@ build_property.EnableCodeStyleSeverity =
 [C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/UpdateSystem/UpdateDialogWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/AboutPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

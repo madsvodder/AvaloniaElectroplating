@@ -23,70 +23,80 @@ public partial class App : Application
 
     public override async void OnFrameworkInitializationCompleted()
     {
-        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        try
         {
-
-            // Dependency injection
-            ServiceCollection collection = new();
-            collection.AddSingleton<MainViewModel>();
-            collection.AddSingleton<PageFactory>();
-            collection.AddSingleton<CalculatePageViewModel>();
-            collection.AddTransient<AboutPageViewModel>();
-            collection.AddTransient<SettingsPageViewModel>();
-            collection.AddSingleton<UserSettingsService>();
-
-            // "Widgets" in calculator page - Dependency injection
-            collection.AddSingleton<TimerPageViewModel>();
-            collection.AddSingleton<CustomCalcViewModel>();
-            collection.AddSingleton<ConverterPageViewModel>();
-
-            // Current calculator
-            collection.AddSingleton<CurrentCalculator>();
-
-
-
-            var services = collection.BuildServiceProvider();
-
-            var splashScreenVm = new SplashScreenViewModel();
-            var splashScreen = new SplashScreenPageView
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                DataContext = splashScreenVm
-            };
-            desktop.MainWindow = splashScreen;
-            splashScreen.Show();
 
-            try
-            {
-                splashScreenVm.StartupMessage = "Starting application...";
-                await Task.Delay(TimeSpan.FromSeconds(1), splashScreenVm.Token);
+                // Dependency injection
+                ServiceCollection collection = new();
+                collection.AddSingleton<MainViewModel>();
+                collection.AddSingleton<PageFactory>();
+                collection.AddSingleton<CalculatePageViewModel>();
+                collection.AddTransient<AboutPageViewModel>();
+                collection.AddTransient<SettingsPageViewModel>();
+                collection.AddSingleton<UserSettingsService>();
 
-                splashScreenVm.StartupMessage = "Loading user settings...";
-                await services.GetRequiredService<UserSettingsService>().LoadSettingsFromJson();
+                // "Widgets" in calculator page - Dependency injection
+                collection.AddSingleton<TimerPageViewModel>();
+                collection.AddSingleton<CustomCalcViewModel>();
+                collection.AddSingleton<ConverterPageViewModel>();
 
-                splashScreenVm.StartupMessage = "Settings loaded successfully";
-            }
-            catch (TaskCanceledException)
-            {
+                // Current calculator
+                collection.AddSingleton<CurrentCalculator>();
+
+                // Update Service
+                collection.AddSingleton<UpdateService>();
+
+                var services = collection.BuildServiceProvider();
+
+                var splashScreenVm = new SplashScreenViewModel();
+                var splashScreen = new SplashScreenPageView
+                {
+                    DataContext = splashScreenVm
+                };
+                desktop.MainWindow = splashScreen;
+                splashScreen.Show();
+
+                try
+                {
+                    splashScreenVm.StartupMessage = "Starting application...";
+                    await Task.Delay(TimeSpan.FromSeconds(1), splashScreenVm.Token);
+
+                    splashScreenVm.StartupMessage = "Checking for updates...";
+                    await services.GetRequiredService<UpdateService>().CheckForUpdates();
+
+                    splashScreenVm.StartupMessage = "Loading user settings...";
+                    await services.GetRequiredService<UserSettingsService>().LoadSettingsFromJson();
+
+                    splashScreenVm.StartupMessage = "Settings loaded successfully";
+                }
+                catch (TaskCanceledException)
+                {
+                    splashScreen.Close();
+                    return;
+                }
+
+                
+                // Line below is needed to remove Avalonia data validation.
+                // Without this line you will get duplicate validations from both Avalonia and CT
+                BindingPlugins.DataValidators.RemoveAt(0);
+
+                var mainWindow = new MainView
+                {
+                    DataContext = services.GetRequiredService<MainViewModel>()
+                };
+
+                desktop.MainWindow = mainWindow;
+                mainWindow.Show();
                 splashScreen.Close();
-                return;
             }
-            
 
-            
-            // Line below is needed to remove Avalonia data validation.
-            // Without this line you will get duplicate validations from both Avalonia and CT
-            BindingPlugins.DataValidators.RemoveAt(0);
-
-            var mainWindow = new MainView
-            {
-                DataContext = services.GetRequiredService<MainViewModel>()
-            };
-
-            desktop.MainWindow = mainWindow;
-            mainWindow.Show();
-            splashScreen.Close();
+            base.OnFrameworkInitializationCompleted();
         }
-
-        base.OnFrameworkInitializationCompleted();
+        catch (Exception e)
+        {
+            throw; // TODO handle exception
+        }
     }
 }
