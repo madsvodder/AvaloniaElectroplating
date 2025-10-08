@@ -1,19 +1,32 @@
 using System;
 using AvaloniaElectroplating.Enums;
 using AvaloniaElectroplating.Models;
+using AvaloniaElectroplating.Services;
 
 namespace AvaloniaElectroplating;
 
 public class CurrentCalculator
 {
+
+    private readonly UserSettingsService _settingsService;
+
+    public CurrentCalculator(UserSettingsService userSettingsService)
+    {
+        _settingsService = userSettingsService;
+    }
+
     public double CalculateCurrent(double areaMm2)
     {
-        // Convert to inches
+        // Convert to square inches
         double areaIn2 = areaMm2 / 645.16;
 
-        // Gateros kit: 0.1 A per square inch
-        double current = Math.Round(areaIn2 * 0.1, 3);
+        // Base current (Gateros kit: 0.1 A per in²)
+        double baseCurrent = areaIn2 * 0.1;
 
-        return current;
+        // Apply user current density setting
+        double currentDensity = _settingsService.Settings.CurrentDensity;
+        double adjustedCurrent = baseCurrent * currentDensity;
+
+        return Math.Round(adjustedCurrent, 3);
     }
 }

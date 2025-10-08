@@ -20,41 +20,41 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AvaloniaElectroplating
-build_property.ProjectDir = /Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/
+build_property.ProjectDir = C:\Users\Mads\Documents\GitHub\AvaloniaElectroplating\AvaloniaElectroplating\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/App.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/AboutPageView.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/AboutPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/CalculatePageView.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/CalculatePageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/ConverterPageView.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/ConverterPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/CustomCalcView.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/CustomCalcView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/MainView.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/MainView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/NotesPageView.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/NotesPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/SettingsPageView.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/SettingsPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/SplashScreenPageView.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/SplashScreenPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/TimerPageView.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/TimerPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/madsvodder/Development/Rider-Projects/AvaloniaElectroplating/AvaloniaElectroplating/Views/WelcomePageWindow.axaml]
+[C:/Users/Mads/Documents/GitHub/AvaloniaElectroplating/AvaloniaElectroplating/Views/WelcomePageWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

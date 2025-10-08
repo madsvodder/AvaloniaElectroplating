@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AvaloniaElectroplating")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84fbd988282cc6bda303da47c19973fa25b4e0e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fd3a66f82fb323b71240ea3e70b05238810ee66")]
 [assembly: System.Reflection.AssemblyProductAttribute("AvaloniaElectroplating")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AvaloniaElectroplating")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

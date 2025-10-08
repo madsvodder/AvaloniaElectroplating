@@ -28,14 +28,22 @@ public partial class App : Application
 
             // Dependency injection
             ServiceCollection collection = new();
+            collection.AddSingleton<MainViewModel>();
             collection.AddSingleton<PageFactory>();
+            collection.AddSingleton<CalculatePageViewModel>();
+            collection.AddTransient<AboutPageViewModel>();
+            collection.AddTransient<SettingsPageViewModel>();
             collection.AddSingleton<UserSettingsService>();
 
-            collection.AddSingleton<MainViewModel>();
+            // "Widgets" in calculator page - Dependency injection
+            collection.AddSingleton<TimerPageViewModel>();
+            collection.AddSingleton<CustomCalcViewModel>();
+            collection.AddSingleton<ConverterPageViewModel>();
 
-            collection.AddSingleton<CalculatePageViewModel>();
-            collection.AddTransient<SettingsPageViewModel>();
-            collection.AddTransient<AboutPageViewModel>();
+            // Current calculator
+            collection.AddSingleton<CurrentCalculator>();
+
+
 
             var services = collection.BuildServiceProvider();
 

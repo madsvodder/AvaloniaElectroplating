@@ -21,10 +21,12 @@ public partial class CalculatePageViewModel : PageViewModel
     // User settings
     private UserSettingsService _settingsService;
 
+    private readonly CurrentCalculator _currentCalculator;
+
     // Viewmodels for wigets on left side - CHANGE THIS SO IT COMES FROM THE FACTORY!?
-    [ObservableProperty] private TimerPageViewModel _timerPage = new();
-    [ObservableProperty] private ConverterPageViewModel _converterPage = new();
-    [ObservableProperty] private CustomCalcViewModel _customCalcPage = new();
+    [ObservableProperty] private TimerPageViewModel _timerPage;
+    [ObservableProperty] private ConverterPageViewModel _converterPage;
+    [ObservableProperty] private CustomCalcViewModel _customCalcPage;
 
     [ObservableProperty] private List<FastenerType> _fastenerTypes = Enum.GetValues<FastenerType>().ToList();
 
@@ -47,7 +49,11 @@ public partial class CalculatePageViewModel : PageViewModel
     public ObservableCollection<ICalculable> AllItemsToCalc { get; } = new();
 
 
-    public CalculatePageViewModel(UserSettingsService userSettingsService)
+    public CalculatePageViewModel(UserSettingsService userSettingsService,
+        TimerPageViewModel timerPageViewModel,
+        CustomCalcViewModel customCalcViewModel,
+        ConverterPageViewModel converterPageViewModel,
+        CurrentCalculator currentCalculator)
     {
         PageName = ApplicationPageNames.Calculate;
 
@@ -56,6 +62,10 @@ public partial class CalculatePageViewModel : PageViewModel
 
         // User settings service
         _settingsService = userSettingsService;
+        _timerPage = timerPageViewModel;
+        _customCalcPage = customCalcViewModel;
+        _converterPage = converterPageViewModel;
+        _currentCalculator = currentCalculator;
     }
 
     [RelayCommand]
@@ -177,11 +187,9 @@ public partial class CalculatePageViewModel : PageViewModel
 
         count += CalculateFasteners();
 
-        CurrentCalculator cc = new();
-
         // Times with the user settings current density - THIS SHOULD BE MOVED TO THE CURRENT CALCULATOR!?
-        double currentNeeded = Math.Round(cc.CalculateCurrent(count) * _settingsService.Settings.CurrentDensity, 3);
-        double roundedSurfaceArea = Math.Round(count, 0);
+        var currentNeeded = Math.Round(_currentCalculator.CalculateCurrent(count), 3);
+        var roundedSurfaceArea = Math.Round(count, 0);
 
         TotalCurrentString = $"⚡ Current needed: {currentNeeded} A";
         TotalAreaString = $"📐 Surface area: {roundedSurfaceArea} mm2";
